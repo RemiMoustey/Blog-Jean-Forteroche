@@ -1,7 +1,7 @@
 <?php $title = htmlspecialchars($post['title']) ?>
 <?php ob_start() ?>
 
-<p><a href="index.php">Retour à la l'accueil</a>
+<p><a href="adminIndex.php">Retour à la l'accueil</a>
 <h1><?= $title ?></h1>
 <h3>
 	<?= $post['title'] ?>
@@ -32,7 +32,7 @@
 </div>
 
 <div class="form_add_comment">
-	<form method="post" action="adminIndex.php?action='addComment'&amp;id=<?= $_GET['id'] ?>">
+	<form method="post" action="adminIndex.php?action=addComment&amp;id=<?= $_GET['id'] ?>">
 		<label for="author">Auteur :</label>
 		<input type="text" name="author" />
 		<label for="comment">Commentaire :</label>
@@ -42,4 +42,4 @@
 </div>
 
 <?php $content = ob_get_clean() ?>
-<?php require('template.php') ?>
+<?php require('adminTemplate.php') ?>

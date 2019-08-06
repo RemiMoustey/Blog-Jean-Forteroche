@@ -3,6 +3,8 @@
 
 <h1>Test de blog</h1>
 
+<a href="tinymce.php">Ajouter un billet</a>
+
 <?php
 while ($data = $posts->fetch())
 {
@@ -16,7 +18,11 @@ while ($data = $posts->fetch())
         <p>
             <?= nl2br($data['content']) ?>
             <br />
-            <a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Commentaires</a>
+            <a href="adminIndex.php?action=post&amp;id=<?= $data['id'] ?>">Commentaires</a>
+            <br />
+            <a href="adminIndex.php?action=modifyPost&amp;id=<?= $data['id'] ?>">Modifier</a>
+            <br />
+            <a href="adminIndex.php?action=removePost&amp;id=<?= $data['id'] ?>">Supprimer</a>
         </p>
     </div>
 <?php
@@ -25,4 +31,4 @@ $posts->closeCursor();
 ?>
 
 <?php $content = ob_get_clean() ?>
-<?php require('template.php') ?>
+<?php require('adminTemplate.php') ?>

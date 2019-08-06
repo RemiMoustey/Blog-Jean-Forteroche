@@ -1,0 +1,10 @@
+body
+{
+    margin-top: 60px;
+}
+
+.container-fluid
+{
+    display: flex;
+    justify-content: flex-end;
+}

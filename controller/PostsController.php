@@ -1,10 +1,11 @@
 <?php
 
 namespace Blog\Controller;
-use Blog\Model;
+use \Blog\Model;
 
 require_once('model/PostManager.php');
 require_once('model/CommentManager.php');
+require_once('model/LoginManager.php');
 
 class PostsController
 {
@@ -29,15 +30,33 @@ class PostsController
 
 	public function addComment($postId, $author, $comment)
 	{
-	    $CommentManager = new CommentManager();
+	    $CommentManager = new \Blog\Model\CommentManager();
 
 	    $affectedLines = $CommentManager->postComment($postId, $author, $comment);
 
-	    if ($affectedLines === false) {
-	        throw new Exception('Impossible d\'ajouter le commentaire !');
+	    if ($affectedLines === false) 
+	    {
+	        throw new Exception('Impossible d\'ajouter le commentaire.');
 	    }
-	    else {
+	    else 
+	    {
 	        header('Location: index.php?action=post&id=' . $postId);
 	    }
+	}
+
+	public function login($login, $password)
+	{
+		$LoginManager = new \Blog\Model\LoginManager();
+
+		$logs = $LoginManager->getLogs();
+
+		if ($logs === false)
+		{
+			throw new Exception("Impossible de se connecter.");
+		}
+		else
+		{
+			header('Location: admin/adminIndex.php');
+		}
 	}
 }

@@ -22,7 +22,8 @@ class AdminPostsController
 	    $CommentManager = new \Blog\Model\CommentManager();
 
 	    $post = $PostManager->getOnePost($_GET['id']);
-	    $comments = $CommentManager->getComments($_GET['id']);
+		$comments = $CommentManager->getComments($_GET['id']);
+		$notifiedComments = $CommentManager->getNotifiedComments($_GET['id']);
 
 	    require('views/frontend/adminOnePostView.php');
 	}
@@ -35,12 +36,11 @@ class AdminPostsController
 
 	    if ($affectedLines === false)
 	    {
-	        throw new Exception('Impossible d\'ajouter le commentaire.');
+			throw new Exception('Impossible d\'ajouter le commentaire.');
+			return;
 	    }
-	    else 
-	    {
-	        header('Location: adminIndex.php?action=post&id=' . $postId);
-	    }
+		
+		header('Location: adminIndex.php?action=post&id=' . $postId);
     }
     
     public function addPost($title, $content)
@@ -52,11 +52,10 @@ class AdminPostsController
 		if ($contentPost === false)
 		{
 			throw new Exception("Impossible d'ajouter le billet.");
+			return;
 		}
-		else
-		{
-			header('Location: admin/adminIndex.php');
-		}
+
+		header('Location: adminIndex.php');
     }
 
     public function modifyPost()
@@ -68,19 +67,18 @@ class AdminPostsController
         require('tinymce.php');
     }
 
-    public function updatePost($title, $content)
+    public function updatePost($title, $content, $postId)
     {
         $PostManager = new \Blog\Model\PostManager();
-		$contentPost = $PostManager->changePost($title, $content);
+		$contentPost = $PostManager->changePost($title, $content, $postId);
 
 		if ($contentPost === false)
 		{
 			throw new Exception("Impossible de modifier le billet.");
+			return;
 		}
-		else
-		{
-			header('Location: adminIndex.php');
-		}
+
+		header('Location: adminIndex.php');
     }
 
     public function removePost($postId)
@@ -90,11 +88,25 @@ class AdminPostsController
         
         if ($post === false)
         {
-            throw new Exception("Impossible de supprimer le billet.");
+			throw new Exception("Impossible de supprimer le billet.");
+			return;
         }
-        else
-        {
-            header('Location: adminIndex.php');
-        }
-    }
+		
+		header('Location: adminIndex.php');
+	}
+	
+	public function reportComment($commentId)
+	{
+		$CommentManager = new \Blog\Model\CommentManager;
+		$comment = $CommentManager->notifyComment($commentId);
+		$notifiedComment = $CommentManager->addNotifiedComment($commentId, $comment['post_id'], $comment['author'], $comment['comment']);
+
+		if ($comment === false)
+		{
+			throw new Exception("Impossible de signaler le commentaire.");
+			return;
+		}
+
+		header('Location: adminIndex.php');
+	}
 }

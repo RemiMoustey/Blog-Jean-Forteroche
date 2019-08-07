@@ -5,7 +5,6 @@ use \Blog\Model;
 
 require_once('model/PostManager.php');
 require_once('model/CommentManager.php');
-require_once('model/LoginManager.php');
 
 class PostsController
 {
@@ -34,29 +33,30 @@ class PostsController
 
 	    $affectedLines = $CommentManager->postComment($postId, $author, $comment);
 
-	    if ($affectedLines === false) 
+	    if ($affectedLines === false)
 	    {
-	        throw new Exception('Impossible d\'ajouter le commentaire.');
+			throw new Exception('Impossible d\'ajouter le commentaire.');
+			return;
 	    }
-	    else 
-	    {
-	        header('Location: index.php?action=post&id=' . $postId);
-	    }
-	}
+		
+		header('Location: adminIndex.php?action=post&id=' . $postId);
+    }
 
 	public function login($login, $password)
 	{
-		$LoginManager = new \Blog\Model\LoginManager();
-
-		$logs = $LoginManager->getLogs();
+		$password = '$2y$12$dhOG3ZIjgo9djWFFv96wKuroyEqa8Cm6yh70mqGRfMfeu/8bmUJdy';
 
 		if ($logs === false)
 		{
 			throw new Exception("Impossible de se connecter.");
 		}
-		else
+		elseif ($_POST['login'] === 'admin-63' AND password_verify($_POST['password'], $password))
 		{
 			header('Location: admin/adminIndex.php');
+		}
+		else
+		{
+			header('Location: index.php');
 		}
 	}
 }

@@ -25,6 +25,9 @@
 	<p>
 		<?= htmlspecialchars($data['comment']) ?>
 	</p>
+	<p>
+		<a href="adminIndex.php?action=notifyComment&amp;id=<?= $data['id'] ?>"><i class="fas fa-exclamation-circle"></i>Signaler</a>
+	</p>
 	<?php
 	}
 	$comments->closeCursor();
@@ -39,6 +42,25 @@
 		<textarea name="comment"></textarea>
 		<button type="submit">Envoyer</button>
 	</form>
+</div>
+
+<h2>Commentaires signalés</h2>
+<div class="notified_comments">
+<?php
+	while ($data = $notifiedComments->fetch())
+	{
+	?>
+	<h3>Commentaire signalé le <?= htmlspecialchars($data['notify_date_fr']) ?></p>
+
+	<h4>Auteur</h4>
+	<p><?= htmlspecialchars($data['author']) ?></p>
+
+	<h4>Commentaire</h4>
+	<p><?= htmlspecialchars($data['comment']) ?></p>
+	<?php
+	}
+	$comments->closeCursor();
+	?>
 </div>
 
 <?php $content = ob_get_clean() ?>

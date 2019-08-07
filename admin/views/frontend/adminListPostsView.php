@@ -11,7 +11,7 @@ while ($data = $posts->fetch())
 ?>
     <div class="news">
         <h3>
-            <?= $data['title'] ?>
+            <a href="adminIndex.php?action=post&amp;id=<?= $data['id'] ?>"><?= $data['title'] ?></a>
             <em>le <?= $data['creation_date_fr'] ?></em>
         </h3>
         

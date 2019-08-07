@@ -13,7 +13,10 @@
 
 	<body>
 		<h1>Rédaction d'un billet</h1>
-		<form method="post" action="adminIndex.php?action=updatePost&amp;id=<?= $_GET['id'] ?>">
+		<?php if(isset($_GET['id']))
+		{ ?> <form method="post" action="adminIndex.php?action=updatePost&amp;id=<?= $_GET['id'] ?>"> <?php }
+		else
+		{ ?> <form method="post" action="adminIndex.php?action=addPost"> <?php } ?>
 			<label for="title">Titre :</label>
 			<input type="text" name="title" value="<?php if(isset($_GET['id'])) echo $post['title'] ?>" />
 			<br />

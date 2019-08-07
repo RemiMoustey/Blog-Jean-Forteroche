@@ -25,6 +25,9 @@
 	<p>
 		<?= htmlspecialchars($data['comment']) ?>
 	</p>
+	<p>
+		<a href="#"><i class="fas fa-exclamation-circle"></i>Signaler</a>
+	</p>
 	<?php
 	}
 	$comments->closeCursor();
@@ -32,7 +35,7 @@
 </div>
 
 <div class="form_add_comment">
-	<form method="post" action="adminIndex.php?action='addComment'&amp;id=<?= $_GET['id'] ?>">
+	<form method="post" action="index.php?action=addComment&amp;id=<?= $_GET['id'] ?>">
 		<label for="author">Auteur :</label>
 		<input type="text" name="author" />
 		<label for="comment">Commentaire :</label>

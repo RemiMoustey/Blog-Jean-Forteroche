@@ -107,6 +107,20 @@ class AdminPostsController
 			return;
 		}
 
+		header('Location: adminIndex.php?action=post&id=' . $comment['post_id']);
+	}
+
+	public function removeComment($commentId)
+	{
+		$CommentManager = new \Blog\Model\CommentManager;
+		$comment = $CommentManager->deleteComment($commentId);
+
+		if ($comment === false)
+		{
+			throw new Exception("Impossible de supprimer le commentaire.");
+			return;
+        }
+		
 		header('Location: adminIndex.php');
 	}
 }

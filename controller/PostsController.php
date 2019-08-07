@@ -39,7 +39,7 @@ class PostsController
 			return;
 	    }
 		
-		header('Location: adminIndex.php?action=post&id=' . $postId);
+		header('Location: index.php?action=post&id=' . $postId);
     }
 
 	public function login($login, $password)
@@ -58,5 +58,20 @@ class PostsController
 		{
 			header('Location: index.php');
 		}
+	}
+
+	public function reportComment($commentId)
+	{
+		$CommentManager = new \Blog\Model\CommentManager;
+		$comment = $CommentManager->notifyComment($commentId);
+		$notifiedComment = $CommentManager->addNotifiedComment($commentId, $comment['post_id'], $comment['author'], $comment['comment']);
+
+		if ($comment === false)
+		{
+			throw new Exception("Impossible de signaler le commentaire.");
+			return;
+		}
+
+		header('Location: index.php?action=post&id=' . $comment['post_id']);
 	}
 }

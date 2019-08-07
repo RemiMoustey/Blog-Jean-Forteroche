@@ -88,6 +88,7 @@ if (isset($_GET['action'])) {
             {
                 echo "<p>Erreur : tous les champs ne sont pas remplis.</p>";
             }
+            break;
 
         case 'notifyComment':
             if (isset($_GET['id']) AND $_GET['id'] > 0)
@@ -97,6 +98,17 @@ if (isset($_GET['action'])) {
             else
             {
                 echo "<p>Erreur : aucun identifiant de commentaire envoyé"; 
+            }
+            break;
+
+        case 'removeComment':
+            if (isset($_GET['id']) AND $_GET['id'] > 0)
+            {
+                $postController->removeComment($_GET['id']);
+            }
+            else
+            {
+                echo "<p>Erreur : aucun identifiant de commentaire envoyé";
             }
 
     }

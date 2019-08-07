@@ -26,7 +26,7 @@
 		<?= htmlspecialchars($data['comment']) ?>
 	</p>
 	<p>
-		<a href="#"><i class="fas fa-exclamation-circle"></i>Signaler</a>
+		<a href="index.php?action=notifyComment&amp;id=<?= $data['id'] ?>"><i class="fas fa-exclamation-circle"></i>Signaler</a>
 	</p>
 	<?php
 	}

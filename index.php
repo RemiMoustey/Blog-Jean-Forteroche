@@ -43,6 +43,18 @@ if (isset($_GET['action'])) {
             {
                 echo "<p>Erreur : tous les champs ne sont pas remplis.</p>";
             }
+            break;
+
+        case 'notifyComment':
+            if (isset($_GET['id']) AND $_GET['id'] > 0)
+            {
+                $postController->reportComment($_GET['id']);
+            }
+            else
+            {
+                echo "<p>Erreur : aucun identifiant de commentaire envoyé"; 
+            }
+            break;
     }
 }
 

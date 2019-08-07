@@ -35,12 +35,12 @@ class PostManager extends PDOFactory
 	public function changePost($title, $content, $postId)
 	{
 		$db = $this->getMysqlConnexion();
-		$query = $db->exec("UPDATE posts SET title = '$title', content = '$content' WHERE id = '$postId'");
+		$db->exec("UPDATE posts SET title = '$title', content = '$content' WHERE id = '$postId'");
 	}
 
 	public function deletePost($postId)
 	{
 		$db = $this->getMysqlConnexion();
-		$query = $db->exec("DELETE FROM posts WHERE id='$postId'");
+		$db->exec("DELETE FROM posts WHERE id='$postId'");
 	}
 }

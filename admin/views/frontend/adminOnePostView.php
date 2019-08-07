@@ -27,6 +27,7 @@
 	</p>
 	<p>
 		<a href="adminIndex.php?action=notifyComment&amp;id=<?= $data['id'] ?>"><i class="fas fa-exclamation-circle"></i>Signaler</a>
+		<a href="adminIndex.php?action=removeComment&amp;id=<?= $data['id'] ?>">Supprimer</a>
 	</p>
 	<?php
 	}
@@ -57,6 +58,8 @@
 
 	<h4>Commentaire</h4>
 	<p><?= htmlspecialchars($data['comment']) ?></p>
+
+	<p><a href="adminIndex.php?action=removeComment&amp;id=<?= $data['id'] ?>">Supprimer</a></p>
 	<?php
 	}
 	$comments->closeCursor();

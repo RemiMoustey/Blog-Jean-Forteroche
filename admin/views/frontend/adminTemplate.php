@@ -14,8 +14,8 @@
 		<nav class="navbar navbar-inverse navbar-fixed-top">
 			<div class="container-fluid">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="index.php">Accueil</a></li>
-					<li><a href="../index.php">Se déconnecter</a></li>
+					<li class="active"><a href="adminIndex.php">Accueil</a></li>
+					<li><a href="logout.php">Se déconnecter</a></li>
 				</ul>
 			</div>
 		</nav>

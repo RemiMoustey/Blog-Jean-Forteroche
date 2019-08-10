@@ -16,8 +16,39 @@
 				</ul>
 			</div>
 		</nav>
+		
+		<?php $error = null;
+		if(!empty($_POST['login']) AND !empty($_POST['password']))
+		{
+			$password = '$2y$12$dhOG3ZIjgo9djWFFv96wKuroyEqa8Cm6yh70mqGRfMfeu/8bmUJdy';
+			if ($_POST['login'] === 'admin-63' AND (password_verify($_POST['password'], $password)))
+			{
+				session_start();
+				$_SESSION['authenticated'] = 1;
+				header('Location: admin/adminIndex.php');
+			}
+			else
+			{
+				$error = "Identifiants incorrects";
+			}
+		}
+
+		require_once 'admin/auth.php';
+		if(isAuthenticated())
+		{
+			header('Location: admin/adminIndex.php');
+		}
+
+?>
+
+		<?php if ($error)
+		{ ?>
+		<div class="alert alert-danger">
+			<?= $error ?>
+		</div>
+		<?php } ?>
 		<h1>Connexion</h1>
-		<form method="post" action="index.php?action=connexion">
+		<form method="post" action="">
 			<label for="login">Login :</label>
 			<input type="text" name="login" required />
 			<br />

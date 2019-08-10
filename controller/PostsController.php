@@ -42,24 +42,6 @@ class PostsController
 		header('Location: index.php?action=post&id=' . $postId);
     }
 
-	public function login($login, $password)
-	{
-		$password = '$2y$12$dhOG3ZIjgo9djWFFv96wKuroyEqa8Cm6yh70mqGRfMfeu/8bmUJdy';
-
-		if ($logs === false)
-		{
-			throw new Exception("Impossible de se connecter.");
-		}
-		elseif ($_POST['login'] === 'admin-63' AND password_verify($_POST['password'], $password))
-		{
-			header('Location: admin/adminIndex.php');
-		}
-		else
-		{
-			header('Location: index.php');
-		}
-	}
-
 	public function reportComment($commentId)
 	{
 		$CommentManager = new \Blog\Model\CommentManager;

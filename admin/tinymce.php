@@ -9,9 +9,20 @@
 		selector: '#mytextarea'
 		});
 		</script>
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous" />
+		<link rel="stylesheet" href="../public/css/styles.css" />
 	</head>
 
 	<body>
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container-fluid">
+				<ul class="nav navbar-nav">
+					<li><a href="adminIndex.php">Accueil</a></li>
+					<li><a href="logout.php">Se déconnecter</a></li>
+				</ul>
+			</div>
+		</nav>
 		<h1>Rédaction d'un billet</h1>
 		<?php if(isset($_GET['id']))
 		{ ?> <form method="post" action="adminIndex.php?action=updatePost&amp;id=<?= $_GET['id'] ?>"> <?php }

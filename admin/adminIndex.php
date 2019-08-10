@@ -1,5 +1,6 @@
 <?php
-
+require_once('auth.php');
+authenticatedUser();
 use \Blog\Admin\Controller;
 
 require('controller/AdminPostsController.php');

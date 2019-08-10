@@ -55,6 +55,10 @@ if (isset($_GET['action'])) {
                 echo "<p>Erreur : aucun identifiant de commentaire envoyé"; 
             }
             break;
+
+        case 'login':
+            $postController->login();
+
     }
 }
 

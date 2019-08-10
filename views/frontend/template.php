@@ -15,7 +15,7 @@
 			<div class="container-fluid">
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="index.php">Accueil</a></li>
-					<li><a href="login.php">Connexion</a></li>
+					<li><a href="index.php?action=login">Connexion</a></li>
 				</ul>
 			</div>
 		</nav>

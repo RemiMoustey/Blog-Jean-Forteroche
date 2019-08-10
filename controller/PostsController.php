@@ -5,6 +5,7 @@ use \Blog\Model;
 
 require_once('model/PostManager.php');
 require_once('model/CommentManager.php');
+require_once('model/LogsManager.php');
 
 class PostsController
 {
@@ -55,5 +56,13 @@ class PostsController
 		}
 
 		header('Location: index.php?action=post&id=' . $comment['post_id']);
+	}
+
+	public function login()
+	{
+		$logsManager = new \Blog\Model\LogsManager;
+		$logs = $logsManager->getLogs();
+
+		require('views/frontend/loginView.php');
 	}
 }

@@ -5,7 +5,8 @@ require_once('PDOFactory.php');
 
 class CommentManager extends PDOFactory
 {
-	public function getComments($postId) {
+	public function getComments($postId)
+	{
 		$db = $this->getMysqlConnexion();
 		$query = $db->prepare('SELECT id, author, comment, DATE_FORMAT(creation_date, \'%d/%m/%Y à %H:%i:%s\') AS creation_date_fr FROM comments WHERE post_id = ? ORDER BY creation_date DESC');
 		$query->execute(array($postId));

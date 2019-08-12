@@ -46,7 +46,7 @@ class CommentManager extends PDOFactory
 	public function getNotifiedComments($postId)
 	{
 		$db = $this->getMysqlConnexion();
-		$query = $db->prepare('SELECT id, post_id, author, comment, DATE_FORMAT(notify_date, \'%d/%m/%Y à %H:%i:%s\') AS notify_date_fr FROM notifiedComments WHERE post_id = ? ORDER BY notify_date DESC');
+		$query = $db->prepare('SELECT id, post_id, author, comment, DATE_FORMAT(notify_date, \'%d/%m/%Y à %H:%i\') AS notify_date_fr FROM notifiedComments WHERE post_id = ? ORDER BY notify_date DESC');
 		$query->execute(array($postId));
 
 		return $query;

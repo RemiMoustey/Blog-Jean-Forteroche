@@ -7,7 +7,7 @@
 		<div class="article">
 			<h2 class="new-title"><?= $title ?></h2>
 			<h3>
-				<?= $post['creation_date_fr'] ?>
+				Le <?= $post['creation_date_fr'] ?>
 			</h3>
 
 			<p>
@@ -16,36 +16,37 @@
 		</div>
 
 		<div class="comments">
-			<h2>Commentaires</h2>
+			<h2 id="anchor-comments">Commentaires</h2>
 			<?php
 			while ($data = $comments->fetch())
 			{
-			?>
-			<h4>
-				<?= htmlspecialchars($data['author']) ?>
-				<?= htmlspecialchars($data['creation_date_fr']) ?>
-			</h4>
-			<p>
-				<?= htmlspecialchars($data['comment']) ?>
-			</p>
-			<p>
-				<a href="index.php?action=notifyComment&amp;id=<?= $data['id'] ?>"><i class="fas fa-exclamation-circle"></i>Signaler</a>
-			</p>
-			<?php
+				?>
+				<h4>
+					<span class="comments-author"><?= htmlspecialchars($data['author']) ?></span>
+					<span class="comments-date"><?= htmlspecialchars($data['creation_date_fr']) ?></span>
+				</h4>
+				<p>
+					<?= nl2br(htmlspecialchars($data['comment'])) ?>
+				</p>
+				<p class="report-link">
+					<a href="index.php?action=notifyComment&amp;id=<?= $data['id'] ?>"><i class="fas fa-exclamation-circle"></i> Signaler</a>
+				</p>
+				<?php
 			}
 			$comments->closeCursor();
 			?>
+			<div class="form_add_comment">
+				<h2>Ajouter un commentaire</h2>
+				<form method="post" action="index.php?action=addComment&amp;id=<?= $_GET['id'] ?>">
+					<label for="author">Auteur :</label>
+					<input type="text" name="author" class="form-control" />
+					<label for="comment">Commentaire :</label>
+					<textarea name="comment" class="form-control" rows="4"></textarea>
+					<button type="submit">Envoyer</button>
+				</form>
+			</div>
 		</div>
 	</div>
-</div>
-<div class="form_add_comment">
-	<form method="post" action="index.php?action=addComment&amp;id=<?= $_GET['id'] ?>">
-		<label for="author">Auteur :</label>
-		<input type="text" name="author" />
-		<label for="comment">Commentaire :</label>
-		<textarea name="comment"></textarea>
-		<button type="submit">Envoyer</button>
-	</form>
 </div>
 
 <?php $content = ob_get_clean() ?>

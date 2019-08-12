@@ -60,7 +60,7 @@ h1
     position: relative;
 }
 
-.news, .article, .comments 
+.news, .article, .comments, .form-login
 {
     margin-bottom: 25px;
     background-color: rgba(255, 255, 255, 0.7);
@@ -71,13 +71,6 @@ h1
 .news
 {
     width: 70%;
-}
-
-.link-comments
-{
-    color: rgb(223, 68, 7);
-    text-decoration: none;
-    font-weight: bold;
 }
 
 .one-new-index
@@ -106,7 +99,7 @@ h3
     font-size: 18px;
 }
 
-.news h3 a, .one-new .new-title, .link-home a, .comments h2
+.news h3 a, .news .link-comments a, .one-new .new-title, .link-home a, .comments h2, .report-link a, .article-rest a, .delete-comment-link a
 {
     color: rgb(223, 68, 7);
     text-decoration: none;
@@ -116,6 +109,40 @@ h3
 .comments h4
 {
     font-size: 20px;
+    margin-top: 30px;
+}
+
+.comments h5
+{
+    font-weight: bold;
+}
+
+.comments form
+{
+    width: 50%;
+}
+
+.comments-author
+{
+    font-weight: bold;
+}
+
+.comments-date
+{
+   font-size: 15px; 
+}
+
+.form-login
+{
+    width: 20%;
+    margin: auto;
+    position: relative;
+    bottom: 100px;
+}
+
+form button, form label
+{
+    margin-top: 10px;
 }
 
 .link-home

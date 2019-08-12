@@ -14,13 +14,16 @@
 		<nav class="navbar navbar-inverse navbar-fixed-top">
 			<div class="container-fluid">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="adminIndex.php">Accueil</a></li>
+					<li><a href="adminIndex.php">Accueil</a></li>
 					<li><a href="logout.php">Se déconnecter</a></li>
 				</ul>
 			</div>
 		</nav>
 		<div class="hero">
 			<img src="../public/img/hero.jpg" alt="Un paysage d'Alaska" />
+		</div>
+		<div class="text-image">
+			<h1><span class="title-principle">Billet simple pour l'</span><span class="title-ending">Alaska</span></h1>
 		</div>
 		<?= $content ?>
 	</body>

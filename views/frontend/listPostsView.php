@@ -8,7 +8,7 @@
         <div class="news">
             <h3>
                 <a href="index.php?action=post&amp;id=<?= $data['id'] ?>"><?= $data['title'] ?></a>
-                <em><span class="news-date">le <?= $data['creation_date_fr'] ?></span></em>
+                <em><span class="news-date"> publié le <?= $data['creation_date_fr'] ?></span></em>
             </h3>
             
             <p>
@@ -35,7 +35,7 @@
                 if(strlen($textContent) > 500)
                 {
                     echo $tagsContent . nl2br(substr($textContent, 0, 500)). "..."; ?>
-                    <a href="index.php?action=post&id=<?= $data['id'] ?>">Lire la suite</a>
+                    <p class="article-rest"><a href="index.php?action=post&id=<?= $data['id'] ?>">Lire la suite</a></p>
                 <?php
                 }
                 else
@@ -43,8 +43,8 @@
                     echo $tagsContent . nl2br($textContent);
                 }
                 ?>
-                <br />
-                <a href="index.php?action=post&amp;id=<?= $data['id'] ?>" class="link-comments">Commentaires</a>
+                
+                <p class="link-comments"><a href="index.php?action=post&amp;id=<?= $data['id'] ?>#anchor-comments">Voir les commentaires</a></p>
             </p>
         </div>
     <?php

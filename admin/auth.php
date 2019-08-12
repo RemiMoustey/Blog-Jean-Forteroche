@@ -12,7 +12,7 @@ function authenticatedUser()
 {
     if(!isAuthenticated())
     {
-        header('Location: ../login.php');
+        header('Location: ../index.php?action=login');
         exit();
     }
 }

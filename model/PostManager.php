@@ -35,7 +35,9 @@ class PostManager extends PDOFactory
 	public function changePost($title, $content, $postId)
 	{
 		$db = $this->getMysqlConnexion();
-		$db->exec("UPDATE posts SET title = '$title', content = '$content' WHERE id = '$postId'");
+		$adaptatedContent = str_replace("\"", "\\\"", $content); 
+		$db->exec("UPDATE posts SET title = \"$title\", content = \"$adaptatedContent\" WHERE id = \"$postId\"");
+		// Les guillemets doubles sont échappés pour que les éventuels attributs "style" des balises <p> ne produisent pas d'erreur de syntaxe.
 	}
 
 	public function deletePost($postId)

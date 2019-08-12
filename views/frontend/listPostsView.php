@@ -14,7 +14,37 @@ while ($data = $posts->fetch())
         </h3>
         
         <p>
-            <?= nl2br($data['content']) ?>
+            <?php
+            $textContent = $data['content'];
+            $tagsContent = "";
+            while(true)
+            {
+                while($textContent[0] === " " || $textContent[0] === "\r" || $textContent[0] === "\n")
+                {
+                    $textContent = substr($textContent, 1);
+                }
+                if($textContent[0] === "<")
+                {
+                    $tagsContent .= substr(strstr($textContent, ">", true) . ">", 0);
+                    $textContent = substr(strstr($textContent, ">"), 1);
+                }
+                else
+                {
+                    break;
+                }
+            }
+            
+            if(strlen($textContent) > 500)
+            {
+                echo $tagsContent . nl2br(substr($textContent, 0, 500)). "..."; ?>
+                <a href="index.php?action=post&id=<?= $data['id'] ?>">Lire la suite</a>
+            <?php
+            }
+            else
+            {
+                echo $tagsContent . nl2br($textContent);
+            }
+            ?>
             <br />
             <a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Commentaires</a>
         </p>

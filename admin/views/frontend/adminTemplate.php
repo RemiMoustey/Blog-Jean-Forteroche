@@ -19,6 +19,9 @@
 				</ul>
 			</div>
 		</nav>
+		<div class="hero">
+			<img src="../public/img/hero.jpg" alt="Un paysage d'Alaska" />
+		</div>
 		<?= $content ?>
 	</body>
 </html>

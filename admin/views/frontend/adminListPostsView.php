@@ -1,8 +1,6 @@
 <?php $title = 'Liste des billets' ?>
 <?php ob_start() ?>
 
-<h1>Test de blog</h1>
-
 <a href="tinymce.php">Ajouter un billet</a>
 
 <?php

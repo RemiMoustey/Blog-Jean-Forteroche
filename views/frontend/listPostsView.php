@@ -1,58 +1,57 @@
 <?php $title = 'Liste des billets' ?>
 <?php ob_start() ?>
-
-<h1>Test de blog</h1>
-
-<?php
-while ($data = $posts->fetch())
-{
-?>
-    <div class="news">
-        <h3>
-            <a href="index.php?action=post&amp;id=<?= $data['id'] ?>"><?= $data['title'] ?></a>
-            <em>le <?= $data['creation_date_fr'] ?></em>
-        </h3>
-        
-        <p>
-            <?php
-            $textContent = $data['content'];
-            $tagsContent = "";
-            while(true)
-            {
-                while($textContent[0] === " " || $textContent[0] === "\r" || $textContent[0] === "\n")
+<div class="bloc-page-index">
+    <?php
+    while ($data = $posts->fetch())
+    {
+    ?>
+        <div class="news">
+            <h3>
+                <a href="index.php?action=post&amp;id=<?= $data['id'] ?>"><?= $data['title'] ?></a>
+                <em><span class="news-date">le <?= $data['creation_date_fr'] ?></span></em>
+            </h3>
+            
+            <p>
+                <?php
+                $textContent = $data['content'];
+                $tagsContent = "";
+                while(true)
                 {
-                    $textContent = substr($textContent, 1);
+                    while($textContent[0] === " " || $textContent[0] === "\r" || $textContent[0] === "\n")
+                    {
+                        $textContent = substr($textContent, 1);
+                    }
+                    if($textContent[0] === "<")
+                    {
+                        $tagsContent .= substr(strstr($textContent, ">", true) . ">", 0);
+                        $textContent = substr(strstr($textContent, ">"), 1);
+                    }
+                    else
+                    {
+                        break;
+                    }
                 }
-                if($textContent[0] === "<")
+                
+                if(strlen($textContent) > 500)
                 {
-                    $tagsContent .= substr(strstr($textContent, ">", true) . ">", 0);
-                    $textContent = substr(strstr($textContent, ">"), 1);
+                    echo $tagsContent . nl2br(substr($textContent, 0, 500)). "..."; ?>
+                    <a href="index.php?action=post&id=<?= $data['id'] ?>">Lire la suite</a>
+                <?php
                 }
                 else
                 {
-                    break;
+                    echo $tagsContent . nl2br($textContent);
                 }
-            }
-            
-            if(strlen($textContent) > 500)
-            {
-                echo $tagsContent . nl2br(substr($textContent, 0, 500)). "..."; ?>
-                <a href="index.php?action=post&id=<?= $data['id'] ?>">Lire la suite</a>
-            <?php
-            }
-            else
-            {
-                echo $tagsContent . nl2br($textContent);
-            }
-            ?>
-            <br />
-            <a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Commentaires</a>
-        </p>
-    </div>
-<?php
-}
-$posts->closeCursor();
-?>
+                ?>
+                <br />
+                <a href="index.php?action=post&amp;id=<?= $data['id'] ?>" class="link-comments">Commentaires</a>
+            </p>
+        </div>
+    <?php
+    }
+    $posts->closeCursor();
+    ?>
+</div>
 
 <?php $content = ob_get_clean() ?>
 <?php require('template.php') ?>

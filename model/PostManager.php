@@ -8,7 +8,7 @@ class PostManager extends PDOFactory
 	public function getPosts()
 	{
 		$db = $this->getMysqlConnexion();
-		$query = $db->query('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %H:%i:%s\') AS creation_date_fr FROM posts ORDER BY creation_date_fr DESC LIMIT 0, 10');
+		$query = $db->query('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %H:%i\') AS creation_date_fr FROM posts ORDER BY creation_date_fr DESC LIMIT 0, 10');
 
 		return $query;
 	}
@@ -16,7 +16,7 @@ class PostManager extends PDOFactory
 	public function getOnePost($postId)
 	{
 		$db = $this->getMysqlConnexion();
-		$query = $db->prepare('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %H:%m:%s\') AS creation_date_fr FROM posts WHERE id= ?');
+		$query = $db->prepare('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %H:%m\') AS creation_date_fr FROM posts WHERE id= ?');
 		$query->execute(array($postId));
 		$post = $query->fetch();
 

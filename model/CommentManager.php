@@ -8,7 +8,7 @@ class CommentManager extends PDOFactory
 	public function getComments($postId)
 	{
 		$db = $this->getMysqlConnexion();
-		$query = $db->prepare('SELECT id, author, comment, DATE_FORMAT(creation_date, \'%d/%m/%Y à %H:%i:%s\') AS creation_date_fr FROM comments WHERE post_id = ? ORDER BY creation_date DESC');
+		$query = $db->prepare('SELECT id, author, comment, DATE_FORMAT(creation_date, \'%d/%m/%Y à %H:%i\') AS creation_date_fr FROM comments WHERE post_id = ? ORDER BY creation_date DESC');
 		$query->execute(array($postId));
 
 		return $query;
@@ -26,7 +26,7 @@ class CommentManager extends PDOFactory
 	public function notifyComment($commentId)
 	{
 		$db = $this->getMysqlConnexion();
-		$query = $db->prepare('SELECT post_id, author, comment, DATE_FORMAT(creation_date, \'%d/%m/%Y à %H:%m:%s\') AS creation_date_fr FROM comments WHERE id= ?');
+		$query = $db->prepare('SELECT post_id, author, comment, DATE_FORMAT(creation_date, \'%d/%m/%Y à %H:%m\') AS creation_date_fr FROM comments WHERE id= ?');
 		$query->execute(array($commentId));
 		$comment = $query->fetch();
 

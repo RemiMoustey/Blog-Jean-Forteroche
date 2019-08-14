@@ -103,15 +103,14 @@ if (isset($_GET['action'])) {
             break;
 
         case 'removeComment':
-            if (isset($_GET['id']) AND $_GET['id'] > 0)
+            if (isset($_GET['id']) AND $_GET['id'] > 0 AND isset($_GET['post_id']) AND $_GET['post_id'] > 0)
             {
-                $adminController->removeComment($_GET['id']);
+                $adminController->removeComment($_GET['id'], $_GET['post_id']);
             }
             else
             {
                 echo "<p>Erreur : aucun identifiant de commentaire envoyé";
             }
-
     }
 }
 

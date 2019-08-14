@@ -52,9 +52,13 @@ class CommentManager extends PDOFactory
 		return $query;
 	}
 
-	public function deleteComment($commentId)
+	public function deleteComment($commentId, $postId)
 	{
 		$db = $this->getMysqlConnexion();
 		$db->exec("DELETE FROM comments WHERE id=$commentId");
+		$query = $db->prepare('SELECT post_id FROM comments WHERE post_id = :post_id');
+		$query->execute(['post_id' => $postId]);
+
+		return $query;
 	}
 }

@@ -38,10 +38,10 @@
 			<div class="form_add_comment">
 				<h2>Ajouter un commentaire</h2>
 				<form method="post" action="index.php?action=addComment&amp;id=<?= $_GET['id'] ?>">
-					<label for="author">Auteur :</label>
-					<input type="text" name="author" class="form-control" />
+					<label for="author" required>Auteur :</label>
+					<input type="text" name="author" class="form-control" required />
 					<label for="comment">Commentaire :</label>
-					<textarea name="comment" class="form-control" rows="4"></textarea>
+					<textarea name="comment" class="form-control" rows="4" required></textarea>
 					<button type="submit">Envoyer</button>
 				</form>
 			</div>

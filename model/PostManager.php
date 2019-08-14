@@ -41,12 +41,6 @@ class PostManager extends PDOFactory
 	public function deletePost($postId)
 	{
 		$db = $this->getMysqlConnexion();
-		/* $query = $db->prepare('SELECT * FROM comments WHERE post_id= :id');
-		$query->execute(['id' => $postId]);
-		$comments = $query->fetch(); */
-
-	/* 	
- */
 		$db->exec("DELETE comments FROM comments
 		INNER JOIN posts ON comments.post_id = posts.id
 		WHERE comments.post_id = $postId");

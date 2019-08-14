@@ -1,23 +1,23 @@
 <?php
 require_once('auth.php');
 authenticatedUser();
-use \Blog\Admin\Controller;
+use \Blog\Controller;
 
-require('controller/AdminPostsController.php');
+require('../controller/AdminController.php');
 
-$postController = new Blog\Admin\Controller\AdminPostsController();
+$adminController = new Blog\Controller\AdminController();
 
 if (isset($_GET['action'])) {
     switch ($_GET['action'])
     {
         case 'listPosts': 
-            $postController->listPosts();
+            $adminController->listPosts();
             break;
 
         case 'post':
             if (isset($_GET['id']) AND $_GET['id'] > 0) 
             {
-                $postController->onePost($_GET['id']);
+                $adminController->onePost($_GET['id']);
             }
             else 
             {
@@ -28,7 +28,7 @@ if (isset($_GET['action'])) {
         case 'addPost':
             if(!empty($_POST['title']) AND !empty($_POST['content']))
             {
-                $postController->addPost($_POST['title'], $_POST['content']);
+                $adminController->addPost($_POST['title'], $_POST['content']);
             }
             else
             {
@@ -39,7 +39,7 @@ if (isset($_GET['action'])) {
         case 'connexion':
             if(!empty($_POST['login']) AND !empty($_POST['password']))
             {
-                $postController->login($_POST['title'], $_POST['password']);
+                $adminController->login($_POST['title'], $_POST['password']);
             }
             else
             {
@@ -50,7 +50,7 @@ if (isset($_GET['action'])) {
         case 'modifyPost':
             if (isset($_GET['id']) AND $_GET['id'] > 0)
             {
-                $postController->modifyPost();
+                $adminController->modifyPost();
             }
             else
             {
@@ -61,7 +61,7 @@ if (isset($_GET['action'])) {
         case 'updatePost':
             if (isset($_GET['id']) AND $_GET['id'] > 0)
             {
-                $postController->updatePost($_POST['title'], $_POST['content'], $_GET['id']);
+                $adminController->updatePost($_POST['title'], $_POST['content'], $_GET['id']);
             }
             else
             {
@@ -72,7 +72,7 @@ if (isset($_GET['action'])) {
         case 'removePost':
             if (isset($_GET['id']) AND $_GET['id'] > 0)
             {
-                $postController->removePost($_GET['id']);
+                $adminController->removePost($_GET['id']);
             }
             else
             {
@@ -83,7 +83,7 @@ if (isset($_GET['action'])) {
         case 'addComment':
             if (!empty($_POST['author']) AND !empty($_POST['comment']))
             {
-                $postController->addComment($_GET['id'], $_POST['author'], $_POST['comment']);
+                $adminController->addComment($_GET['id'], $_POST['author'], $_POST['comment']);
             }
             else
             {
@@ -94,7 +94,7 @@ if (isset($_GET['action'])) {
         case 'notifyComment':
             if (isset($_GET['id']) AND $_GET['id'] > 0)
             {
-                $postController->reportComment($_GET['id']);
+                $adminController->reportComment($_GET['id']);
             }
             else
             {
@@ -105,7 +105,7 @@ if (isset($_GET['action'])) {
         case 'removeComment':
             if (isset($_GET['id']) AND $_GET['id'] > 0)
             {
-                $postController->removeComment($_GET['id']);
+                $adminController->removeComment($_GET['id']);
             }
             else
             {
@@ -117,5 +117,5 @@ if (isset($_GET['action'])) {
 
 else 
 {
-    $postController->listPosts();
+    $adminController->listPosts();
 }

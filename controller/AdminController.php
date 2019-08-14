@@ -1,19 +1,19 @@
 <?php
 
-namespace Blog\Admin\Controller;
+namespace Blog\Controller;
 use \Blog\Model;
 
 require_once('../model/PostManager.php');
 require_once('../model/CommentManager.php');
 
-class AdminPostsController
+class AdminController
 {
     public function listPosts()
 	{
 		$PostManager = new \Blog\Model\PostManager();
 		$posts = $PostManager->getPosts();
 
-		require('views/frontend/adminListPostsView.php');
+		require('../admin/views/frontend/adminListPostsView.php');
 	}
 
 	public function onePost()
@@ -25,7 +25,7 @@ class AdminPostsController
 		$comments = $CommentManager->getComments($_GET['id']);
 		$notifiedComments = $CommentManager->getNotifiedComments($_GET['id']);
 
-	    require('views/frontend/adminOnePostView.php');
+	    require('../admin/views/frontend/adminOnePostView.php');
 	}
 
 	public function addComment($postId, $author, $comment)
@@ -64,7 +64,7 @@ class AdminPostsController
 
         $post = $PostManager->getOnePost($_GET['id']);
 
-        require('tinymce.php');
+        require('../admin/tinymce.php');
     }
 
     public function updatePost($title, $content, $postId)

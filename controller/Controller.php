@@ -7,7 +7,7 @@ require_once('model/PostManager.php');
 require_once('model/CommentManager.php');
 require_once('model/LogsManager.php');
 
-class PostsController
+class Controller
 {
 	public function listPosts()
 	{

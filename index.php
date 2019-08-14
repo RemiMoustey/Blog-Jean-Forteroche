@@ -1,21 +1,21 @@
 <?php
 
 use Blog\Controller;
-require('controller/PostsController.php');
+require('controller/Controller.php');
 
-$postController = new Blog\Controller\PostsController();
+$controller = new Blog\Controller\Controller();
 
 if (isset($_GET['action'])) {
     switch ($_GET['action'])
     {
         case 'listPosts':
-            $postController->listPosts();
+            $controller->listPosts();
             break;
 
         case 'post': 
             if (isset($_GET['id']) AND $_GET['id'] > 0) 
             {
-                $postController->onePost($_GET['id']);
+                $controller->onePost($_GET['id']);
             }
             else 
             {
@@ -26,7 +26,7 @@ if (isset($_GET['action'])) {
         case 'addComment':
             if(!empty($_POST['author']) AND !empty($_POST['comment']))
             {
-                $postController->addComment($_GET['id'], $_POST['author'], $_POST['comment']);
+                $controller->addComment($_GET['id'], $_POST['author'], $_POST['comment']);
             }
             else
             {
@@ -37,7 +37,7 @@ if (isset($_GET['action'])) {
         case 'connexion':
             if(!empty($_POST['login']) AND !empty($_POST['password']))
             {
-                $postController->login($_POST['login'], $_POST['password']);
+                $controller->login($_POST['login'], $_POST['password']);
             }
             else
             {
@@ -48,7 +48,7 @@ if (isset($_GET['action'])) {
         case 'notifyComment':
             if (isset($_GET['id']) AND $_GET['id'] > 0)
             {
-                $postController->reportComment($_GET['id']);
+                $controller->reportComment($_GET['id']);
             }
             else
             {
@@ -57,11 +57,11 @@ if (isset($_GET['action'])) {
             break;
 
         case 'login':
-            $postController->login();
+            $controller->login();
 
     }
 }
 
 else {
-    $postController->listPosts();
+    $controller->listPosts();
 }

@@ -1,6 +1,7 @@
 <?php $title = 'Liste des billets' ?>
 <?php ob_start() ?>
 <div class="bloc-page-index">
+    <p class="link-create-post"><a href="tinymce.php">Écrire un billet</a></p>
     <?php
     while ($data = $posts->fetch())
     {
@@ -44,6 +45,8 @@
                 }
                 ?>
                 
+                <p class="link-comments"><a href="adminIndex.php?action=modifyPost&amp;id=<?= $data['id'] ?>">Modifier</a></p>
+                <p class="link-comments"><a href="adminIndex.php?action=removePost&amp;id=<?= $data['id'] ?>">Supprimer</a></p>
                 <p class="link-comments"><a href="adminIndex.php?action=post&amp;id=<?= $data['id'] ?>#anchor-comments">Voir les commentaires</a></p>
             </p>
         </div>

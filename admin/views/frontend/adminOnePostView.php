@@ -60,7 +60,7 @@
 						<h5>Commentaire</h5>
 						<p><?= htmlspecialchars($data['comment']) ?></p>
 
-						<p class="delete-comment-link"><a href="adminIndex.php?action=removeComment&amp;id=<?= $data['id'] ?>">Supprimer</a></p>
+						<p class="delete-comment-link"><a href="adminIndex.php?action=removeComment&amp;id=<?= $data['comment_id'] ?>">Supprimer</a></p>
 					</div>
 				<?php
 				}

@@ -8,9 +8,7 @@ class PostManager extends PDOFactory
 	public function getPosts()
 	{
 		$db = $this->getMysqlConnexion();
-		$query = $db->query('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %H:%i\') AS creation_date_fr FROM posts ORDER BY creation_date_fr DESC LIMIT 0, 10');
-
-		return $query;
+		return $db->query('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %H:%i\') AS creation_date_fr FROM posts ORDER BY creation_date_fr DESC LIMIT 0, 10');
 	}
 
 	public function getOnePost($postId)
@@ -43,6 +41,15 @@ class PostManager extends PDOFactory
 	public function deletePost($postId)
 	{
 		$db = $this->getMysqlConnexion();
+		/* $query = $db->prepare('SELECT * FROM comments WHERE post_id= :id');
+		$query->execute(['id' => $postId]);
+		$comments = $query->fetch(); */
+
+	/* 	
+ */
+		$db->exec("DELETE comments FROM comments
+		INNER JOIN posts ON comments.post_id = posts.id
+		WHERE comments.post_id = $postId");
 		$db->exec("DELETE FROM posts WHERE id='$postId'");
 	}
 }

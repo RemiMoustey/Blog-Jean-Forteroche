@@ -99,7 +99,8 @@ h3
     font-size: 18px;
 }
 
-.news h3 a, .news .link-comments a, .one-new .new-title, .link-home a, .comments h2, .report-link a, .article-rest a, .delete-comment-link a
+.news h3 a, .news .link-comments a, .one-new .new-title, .link-home a, .comments h2, 
+.report-link a, .article-rest a, .delete-comment-link a, .link-create-post a
 {
     color: rgb(223, 68, 7);
     text-decoration: none;
@@ -145,12 +146,12 @@ form button, form label
     margin-top: 10px;
 }
 
-.link-home
+.link-home, .link-create-post
 {
     font-size: 20px;
 }
 
-.link-home a
+.link-home a, .link-create-post a
 {
     background-color: rgba(255, 255, 255, 0.7);
     padding: 5px;

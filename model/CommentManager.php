@@ -37,7 +37,7 @@ class CommentManager extends PDOFactory
 	{
 		$db = $this->getMysqlConnexion();
 
-		$notifiedComment = $db->prepare('INSERT INTO notifiedComments(id, post_id, author, comment, notify_date) VALUES(?, ?, ?, ?, NOW())');
+		$notifiedComment = $db->prepare('INSERT INTO notifiedComments(comment_id, post_id, author, comment, notify_date) VALUES(?, ?, ?, ?, NOW())');
 		$affectedLine = $notifiedComment->execute(array($commentId, $post_Id, $author, $comment));
 
 		return $affectedLine;
@@ -46,7 +46,7 @@ class CommentManager extends PDOFactory
 	public function getNotifiedComments($postId)
 	{
 		$db = $this->getMysqlConnexion();
-		$query = $db->prepare('SELECT id, post_id, author, comment, DATE_FORMAT(notify_date, \'%d/%m/%Y à %H:%i\') AS notify_date_fr FROM notifiedComments WHERE post_id = ? ORDER BY notify_date DESC');
+		$query = $db->prepare('SELECT comment_id, post_id, author, comment, DATE_FORMAT(notify_date, \'%d/%m/%Y à %H:%i\') AS notify_date_fr FROM notifiedComments WHERE post_id = ? ORDER BY notify_date DESC');
 		$query->execute(array($postId));
 
 		return $query;
@@ -55,7 +55,6 @@ class CommentManager extends PDOFactory
 	public function deleteComment($commentId)
 	{
 		$db = $this->getMysqlConnexion();
-		$db->exec("DELETE FROM comments WHERE id='$commentId'");
-		$db->exec("DELETE FROM notifiedComments WHERE id='$commentId'");
+		$db->exec("DELETE FROM comments WHERE id=$commentId");
 	}
 }

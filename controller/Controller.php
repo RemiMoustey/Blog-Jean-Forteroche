@@ -41,7 +41,7 @@ class Controller
 			return;
 	    }
 		
-		header('Location: index.php?action=post&id=' . $postId);
+		header('Location: index.php?action=post&id=' . $postId . "#anchor-comments");
     }
 
 	public function reportComment($commentId)

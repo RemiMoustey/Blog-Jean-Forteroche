@@ -45,8 +45,8 @@
                 }
                 ?>
                 
-                <p class="link-comments"><a href="adminIndex.php?action=modifyPost&amp;id=<?= $data['id'] ?>">Modifier</a></p>
-                <p class="link-comments"><a href="adminIndex.php?action=removePost&amp;id=<?= $data['id'] ?>">Supprimer</a></p>
+                <p class="link-comments modify-margin"><a href="adminIndex.php?action=modifyPost&amp;id=<?= $data['id'] ?>">Modifier</a></p>
+                <p class="link-comments"><a href="adminIndex.php?action=removePost&amp;id=<?= $data['id'] ?>" onclick="return(confirm('Êtes-vous sûr de vouloir supprimer ce billet ?'));">Supprimer</a></p>
                 <p class="link-comments"><a href="adminIndex.php?action=post&amp;id=<?= $data['id'] ?>#anchor-comments">Voir les commentaires</a></p>
             </p>
         </div>

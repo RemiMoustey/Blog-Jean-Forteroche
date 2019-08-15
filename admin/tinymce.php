@@ -42,7 +42,7 @@
 				<br />
 				<label for="content">Billet :</label>
 				<textarea name="content" id="mytextarea"><?php if(isset($_GET['id'])) echo $post['content'] ?></textarea>
-				<button type="submit">Publier</button>
+				<button type="submit" onclick="return(confirm('Êtes-vous sûr de vouloir poster ce billet ?'));">Publier</button>
 			</form>
 		</div>
 	</body>

@@ -14,23 +14,52 @@
 				<?= $post['content'] ?>
 			</p>
 		</div>
+		
+		<div class="comments" id="anchor-comments">
+		<?php
+			$notifiedCommentsArray = $notifiedComments->fetchAll();
+			if(!empty($notifiedCommentsArray))
+			{
+			?>
+			<h2>Commentaires signalés</h2>
+			<?php
+			}
+			?>
+			<div class="notified_comments">
+			<?php
+			foreach ($notifiedCommentsArray as $key => $dataNotifiedComments)
+			{
+			?>
+				<div class="reported-comment">
+					<h4>Commentaire signalé le <span class="comment-date"><?= htmlspecialchars($dataNotifiedComments['notify_date_fr']) ?></span></h4>
 
-		<div class="comments">
+					<h5>Auteur</h5>
+					<p><?= htmlspecialchars($dataNotifiedComments['author']) ?></p>
+
+					<h5>Commentaire</h5>
+					<p><?= htmlspecialchars($dataNotifiedComments['comment']) ?></p>
+
+					<p class="delete-comment-link"><a href="adminIndex.php?action=removeComment&amp;id=<?= $dataNotifiedComments['comment_id'] ?>&amp;post_id=<?= $dataNotifiedComments['post_id'] ?>" onclick="return(confirm('Êtes-vous sûr de vouloir supprimer ce commentaire ?'));">Supprimer</a></p>
+				</div>
+			<?php
+			}
+			$notifiedComments->closeCursor();
+			?>
+			</div>
 			<?php
 			$commentsArray = $comments->fetchAll();
 			if(!empty($commentsArray))
 			{
 			?>
-				<h2 id="anchor-comments">Commentaires</h2>
+				<h2 class="comment-title">Commentaires</h2>
 			<?php
 			}
-			$notifiedCommentsArray = $notifiedComments->fetchAll();
 			foreach ($commentsArray as $data)
 			{
 			?>
 			<div class="bloc-comment">
 				<h4>
-					<?= htmlspecialchars($data['author']) ?>
+					<span class="bold"><?= htmlspecialchars($data['author']) ?></span>
 					<span class="comment-date"><?= htmlspecialchars($data['creation_date_fr']) ?></span>
 				</h4>
 				<p>
@@ -42,7 +71,7 @@
 				{
 					?>
 					<p class="report-link">
-						<a href="adminIndex.php?action=notifyComment&amp;id=<?= $data['id'] ?>"><i class="fas fa-exclamation-circle"></i> Signaler</a>
+						<a href="adminIndex.php?action=notifyComment&amp;id=<?= $data['id'] ?>#anchor-comments" onclick="return(confirm('Êtes-vous sûr de vouloir signaler ce commentaire ?'));"><i class="fas fa-exclamation-circle"></i> Signaler</a>
 					</p>
 				<?php
 				}
@@ -53,7 +82,7 @@
 						if (in_array($data['id'], $notifiedCommentsArray[$i]))
 						{
 				?>
-							<p>Ce commentaire a déjà été signalé.</p>
+							<p class="already-reported">Ce commentaire a été signalé.</p>
 				<?php
 							break;
 						}
@@ -83,35 +112,7 @@
 					<button type="submit" onclick="return(confirm('Êtes-vous sûr de vouloir poster ce commentaire ?'));">Envoyer</button>
 				</form>
 			</div>
-			<?php
-			if(!empty($notifiedCommentsArray))
-			{
-			?>
-			<h2 class="reported-comment-title">Commentaires signalés</h2>
-			<?php
-			}
-			?>
-			<div class="notified_comments">
-			<?php
-			foreach ($notifiedCommentsArray as $key => $dataNotifiedComments)
-			{
-			?>
-				<div class="reported-comment">
-					<h4>Commentaire signalé le <span class="comment-date"><?= htmlspecialchars($dataNotifiedComments['notify_date_fr']) ?></span></h4>
-
-					<h5>Auteur</h5>
-					<p><?= htmlspecialchars($dataNotifiedComments['author']) ?></p>
-
-					<h5>Commentaire</h5>
-					<p><?= htmlspecialchars($dataNotifiedComments['comment']) ?></p>
-
-					<p class="delete-comment-link"><a href="adminIndex.php?action=removeComment&amp;id=<?= $dataNotifiedComments['comment_id'] ?>&amp;post_id=<?= $dataNotifiedComments['post_id'] ?>">Supprimer</a></p>
-				</div>
-			<?php
-			}
-			$notifiedComments->closeCursor();
-			?>
-			</div>
+			
 		</div>
 	</div>
 </div>

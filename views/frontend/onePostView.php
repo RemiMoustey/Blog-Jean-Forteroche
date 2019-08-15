@@ -15,13 +15,13 @@
 			</p>
 		</div>
 
-		<div class="comments">
+		<div class="comments" id="anchor-comments">
 		<?php
 			$commentsArray = $comments->fetchAll();
 			if(!empty($commentsArray))
 			{
 			?>
-				<h2 id="anchor-comments">Commentaires</h2>
+				<h2>Commentaires</h2>
 			<?php
 			}
 			$notifiedCommentsArray = $notifiedComments->fetchAll();
@@ -30,7 +30,7 @@
 			?>
 			<div class="bloc-comment">
 				<h4>
-					<?= htmlspecialchars($data['author']) ?>
+					<span class="bold"><?= htmlspecialchars($data['author']) ?></span>
 					<span class="comment-date"><?= htmlspecialchars($data['creation_date_fr']) ?></span>
 				</h4>
 				<p>
@@ -42,7 +42,7 @@
 				{
 					?>
 					<p class="report-link">
-						<a href="index.php?action=notifyComment&amp;id=<?= $data['id'] ?>"><i class="fas fa-exclamation-circle"></i> Signaler</a>
+						<a href="index.php?action=notifyComment&amp;id=<?= $data['id'] ?>#anchor-comments" onclick="return(confirm('Êtes-vous sûr de vouloir signaler ce commentaire ?'));"><i class="fas fa-exclamation-circle"></i> Signaler</a>
 					</p>
 				<?php
 				}
@@ -53,7 +53,7 @@
 						if (in_array($data['id'], $notifiedCommentsArray[$i]))
 						{
 				?>
-							<p>Ce commentaire a déjà été signalé.</p>
+							<p class="already-reported">Ce commentaire a été signalé.</p>
 				<?php
 							break;
 						}
@@ -61,7 +61,7 @@
 						{
 				?>
 							<p class="report-link">
-							<a href="index.php?action=notifyComment&amp;id=<?= $data['id'] ?>"><i class="fas fa-exclamation-circle"></i> Signaler</a>
+							<a href="index.php?action=notifyComment&amp;id=<?= $data['id'] ?>#anchor-comments" onclick="return(confirm('Êtes-vous sûr de vouloir signaler ce commentaire ?'));"><i class="fas fa-exclamation-circle"></i> Signaler</a>
 						</p>
 				<?php
 						}

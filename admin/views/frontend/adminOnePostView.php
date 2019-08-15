@@ -16,24 +16,28 @@
 		</div>
 
 		<div class="comments">
-			<h2 id="anchor-comments">Commentaires</h2>
 			<?php
-			$notifiedCommentsArray = $notifiedComments->fetchAll();
-			var_dump($notifiedCommentsArray);
-			while ($data = $comments->fetch())
+			$commentsArray = $comments->fetchAll();
+			if(!empty($commentsArray))
 			{
 			?>
+				<h2 id="anchor-comments">Commentaires</h2>
+			<?php
+			}
+			$notifiedCommentsArray = $notifiedComments->fetchAll();
+			foreach ($commentsArray as $data)
+			{
+			?>
+			<div class="bloc-comment">
 				<h4>
 					<?= htmlspecialchars($data['author']) ?>
-					<?= htmlspecialchars($data['creation_date_fr']) ?>
+					<span class="comment-date"><?= htmlspecialchars($data['creation_date_fr']) ?></span>
 				</h4>
 				<p>
 					<?= htmlspecialchars($data['comment']) ?>
 				</p>
 				<?php
-				/* var_dump($data['id']);
-				var_dump(!in_array($data['id'], $notifiedCommentsArray));
-				var_dump(empty($notifiedCommentsArray)); */
+
 				if (empty($notifiedCommentsArray))
 				{
 					?>
@@ -63,6 +67,9 @@
 						}
 					}
 				}
+				?>
+			</div>
+			<?php
 			}
 			$comments->closeCursor();
 			?>
@@ -76,14 +83,21 @@
 					<button type="submit">Envoyer</button>
 				</form>
 			</div>
-			<h2>Commentaires signalés</h2>
+			<?php
+			if(!empty($notifiedCommentsArray))
+			{
+			?>
+			<h2 class="reported-comment-title">Commentaires signalés</h2>
+			<?php
+			}
+			?>
 			<div class="notified_comments">
 			<?php
 			foreach ($notifiedCommentsArray as $key => $dataNotifiedComments)
 			{
 			?>
 				<div class="reported-comment">
-					<h4>Commentaire signalé le <?= htmlspecialchars($dataNotifiedComments['notify_date_fr']) ?></h4>
+					<h4>Commentaire signalé le <span class="comment-date"><?= htmlspecialchars($dataNotifiedComments['notify_date_fr']) ?></span></h4>
 
 					<h5>Auteur</h5>
 					<p><?= htmlspecialchars($dataNotifiedComments['author']) ?></p>

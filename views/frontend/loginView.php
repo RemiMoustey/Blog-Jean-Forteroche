@@ -26,7 +26,7 @@ if(isAuthenticated())
 
 <?php if ($error)
 { ?>
-<div class="alert alert-danger">
+<div class="alert alert-danger incorrect-ids">
 	<?= $error ?>
 </div>
 <?php } ?>

@@ -9,7 +9,7 @@
         <div class="news">
             <h3>
                 <a href="adminIndex.php?action=post&amp;id=<?= $data['id'] ?>"><?= $data['title'] ?></a>
-                <em><span class="news-date">le <?= $data['creation_date_fr'] ?></span></em>
+                <span class="news-date">le <?= $data['creation_date_fr'] ?></span>
             </h3>
             
             <p>
@@ -36,7 +36,7 @@
                 if(strlen($textContent) > 500)
                 {
                     echo $tagsContent . nl2br(substr($textContent, 0, 500)). "..."; ?>
-                    <p class="article-rest"><a href="adminIndex.php?action=post&id=<?= $data['id'] ?>">Lire la suite</a></p>
+                    <p class="article-rest"><a href="adminIndex.php?action=post&id=<?= $data['id'] ?>">Lire la suite...</a></p>
                 <?php
                 }
                 else

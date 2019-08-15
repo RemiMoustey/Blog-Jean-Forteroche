@@ -35,7 +35,7 @@
                 if(strlen($textContent) > 500)
                 {
                     echo $tagsContent . nl2br(substr($textContent, 0, 500)). "..."; ?>
-                    <p class="article-rest"><a href="index.php?action=post&id=<?= $data['id'] ?>">Lire la suite</a></p>
+                    <p class="article-rest"><a href="index.php?action=post&id=<?= $data['id'] ?>">Lire la suite...</a></p>
                 <?php
                 }
                 else

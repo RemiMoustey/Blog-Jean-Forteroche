@@ -7,6 +7,7 @@
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous" />
 		<link rel="stylesheet" href="./public/css/styles.css" />
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 		<title> <?= $title ?></title>
 	</head>
 
@@ -23,8 +24,9 @@
 			<img src="./public/img/hero.jpg" alt="Un paysage d'Alaska" />
 		</div>
 		<div class="text-image">
-			<h1><span class="title-principle">Billet simple pour l'</span><span class="title-ending">Alaska</span></h1>
+			<h1><span class="main-title">Billet simple pour l'</span><span class="title-ending">Alaska</span></h1>
 		</div>
 		<?= $content ?>
+		<script src="./public/js/events.js"></script>
 	</body>
 </html>

@@ -23,7 +23,8 @@ class Controller
 	    $CommentManager = new \Blog\Model\CommentManager();
 
 	    $post = $PostManager->getOnePost($_GET['id']);
-	    $comments = $CommentManager->getComments($_GET['id']);
+		$comments = $CommentManager->getComments($_GET['id']);
+		$notifiedComments = $CommentManager->getNotifiedComments($_GET['id']);
 
 	    require('views/frontend/onePostView.php');
 	}

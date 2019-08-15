@@ -24,15 +24,42 @@ body
     background-image: url('../img/fond.png');
 }
 
+.news, .link-home a, .link-create-post a, .article, .comments, .form-login, .redaction
+{
+    border: 1px solid black;
+}
+
+.navbar, .hero
+{
+    box-shadow: 0 2px 8px black;
+}
+
 .container-fluid
 {
     display: flex;
     justify-content: flex-end;
 }
 
+.navbar
+{
+    border: none;
+}
+
+.navbar-inverse .navbar-nav>li>a
+{
+    color: black;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.nav, .container-fluid
+{
+    background-color: #bec2c4;
+}
+
 .hero
 {
-    margin-top: -9px;
+    margin-top: -10px;
 }
 
 .hero img
@@ -132,9 +159,16 @@ h3
 .report-link a, .article-rest a, .delete-comment-link a, .link-create-post a,
 .already-reported
 {
-    color: rgb(223, 68, 7);
+    color: #ce3a84;
     text-decoration: none;
     font-weight: bold;
+}
+
+.news h3 a:hover, .news .link-comments a:hover, .link-home a:hover,
+.report-link a:hover, .article-rest a:hover, .delete-comment-link a:hover,
+.link-create-post a:hover
+{
+    color: rgb(27, 158, 27);
 }
 
 .link-create-post
@@ -264,9 +298,14 @@ h2
 
 @media all and (max-width: 768px)
 {
-    body
+    .nav
     {
-        background: none;
+        display: flex;
+    }
+
+    h1
+    {
+        margin: 0 0 100px 0;
     }
 
     .bloc-page
@@ -276,11 +315,14 @@ h2
     
     .hero
     {
-        padding-top: 40px;
+        padding-top: 5px;
     }
+
     .text-image
     {
         top: 0;
-        color: #6BCDE6;
+        color: #fff;
+        background-color: #989fa3;
+        box-shadow: 0 2px 8px black;
     }
 }

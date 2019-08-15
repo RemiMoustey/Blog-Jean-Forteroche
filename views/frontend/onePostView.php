@@ -80,7 +80,7 @@
 					<input type="text" name="author" class="form-control" required />
 					<label for="comment">Commentaire :</label>
 					<textarea name="comment" class="form-control" rows="4" required></textarea>
-					<button type="submit" onclick="return(confirm('Êtes-vous sûr de vouloir poster ce commentaire ?'));">Envoyer</button>
+					<button class="btn btn-default" type="submit" onclick="return(confirm('Êtes-vous sûr de vouloir poster ce commentaire ?'));">Envoyer</button>
 				</form>
 			</div>
 		</div>

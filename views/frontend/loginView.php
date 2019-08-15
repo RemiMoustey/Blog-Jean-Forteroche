@@ -39,7 +39,7 @@ if(isAuthenticated())
 		<br />
 		<label for="password">Mot de passe :</label>
 		<input type="password" name="password" class="form-control" required />
-		<button type="submit">Se connecter</button>
+		<button class="btn btn-default" type="submit">Se connecter</button>
 	</form>
 </div>
 

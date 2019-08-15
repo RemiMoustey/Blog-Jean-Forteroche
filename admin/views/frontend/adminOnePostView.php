@@ -72,6 +72,7 @@
 					?>
 					<p class="report-link">
 						<a href="adminIndex.php?action=notifyComment&amp;id=<?= $data['id'] ?>#anchor-comments" onclick="return(confirm('Êtes-vous sûr de vouloir signaler ce commentaire ?'));"><i class="fas fa-exclamation-circle"></i> Signaler</a>
+						<p class="delete-comment-link"><a href="adminIndex.php?action=removeComment&amp;id=<?= $data['id'] ?>&amp;post_id=<?= $data['post_id'] ?>" onclick="return(confirm('Êtes-vous sûr de vouloir supprimer ce commentaire ?'));">Supprimer</a></p>
 					</p>
 				<?php
 				}
@@ -91,6 +92,7 @@
 				?>
 							<p class="report-link">
 							<a href="adminIndex.php?action=notifyComment&amp;id=<?= $data['id'] ?>"><i class="fas fa-exclamation-circle"></i> Signaler</a>
+							<p class="delete-comment-link"><a href="adminIndex.php?action=removeComment&amp;id=<?= $data['id'] ?>&amp;post_id=<?= $data['post_id'] ?>" onclick="return(confirm('Êtes-vous sûr de vouloir supprimer ce commentaire ?'));">Supprimer</a></p>
 						</p>
 				<?php
 						}
@@ -109,7 +111,7 @@
 					<input type="text" name="author" class="form-control" required />
 					<label for="comment">Commentaire :</label>
 					<textarea name="comment" class="form-control" rows="4" required></textarea>
-					<button type="submit" onclick="return(confirm('Êtes-vous sûr de vouloir poster ce commentaire ?'));">Envoyer</button>
+					<button class="btn btn-default" type="submit" onclick="return(confirm('Êtes-vous sûr de vouloir poster ce commentaire ?'));">Envoyer</button>
 				</form>
 			</div>
 			

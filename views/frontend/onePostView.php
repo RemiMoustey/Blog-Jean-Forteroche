@@ -42,7 +42,7 @@
 				{
 					?>
 					<p class="report-link">
-						<a href="adminIndex.php?action=notifyComment&amp;id=<?= $data['id'] ?>"><i class="fas fa-exclamation-circle"></i> Signaler</a>
+						<a href="index.php?action=notifyComment&amp;id=<?= $data['id'] ?>"><i class="fas fa-exclamation-circle"></i> Signaler</a>
 					</p>
 				<?php
 				}
@@ -61,7 +61,7 @@
 						{
 				?>
 							<p class="report-link">
-							<a href="adminIndex.php?action=notifyComment&amp;id=<?= $data['id'] ?>"><i class="fas fa-exclamation-circle"></i> Signaler</a>
+							<a href="index.php?action=notifyComment&amp;id=<?= $data['id'] ?>"><i class="fas fa-exclamation-circle"></i> Signaler</a>
 						</p>
 				<?php
 						}
@@ -80,7 +80,7 @@
 					<input type="text" name="author" class="form-control" required />
 					<label for="comment">Commentaire :</label>
 					<textarea name="comment" class="form-control" rows="4" required></textarea>
-					<button type="submit" id="submit-comment">Envoyer</button>
+					<button type="submit" onclick="return(confirm('Êtes-vous sûr de vouloir poster ce commentaire ?'));">Envoyer</button>
 				</form>
 			</div>
 		</div>

@@ -58,7 +58,7 @@
 				elseif (preg_match("#^/projet4/admin[a-z0-9._\-/=&?]?#", $_SERVER['REQUEST_URI']))
 				{
 				?>
-				<li><a href="admin/adminIndex.php">Accueil</a></li>
+				<li><a href="./adminIndex.php">Accueil</a></li>
 				<li><a href="./../public/jeanforteroche.php">Qui suis-je ?</a></li>
 				<li><a href="./logout.php">Se déconnecter</a></li>
 				<?php

@@ -18,9 +18,14 @@
     font-size: 16px;
 }
 
-h2
+strong
 {
-    font-family: 'BrushScriptStd', Arial, serif;
+    font-weight: normal;
+}
+
+.italic
+{
+    font-style: italic;
 }
 
 body
@@ -100,7 +105,7 @@ h1
     position: relative;
 }
 
-.news, .article, .comments, .form-login, .biography
+.news, .article, .comments, .form-login, .biography, .site-presentation
 {
     margin-bottom: 25px;
     background-color: rgba(255, 255, 255, 0.8);
@@ -262,7 +267,7 @@ form button, form label
     width: 70%;
     margin: auto;
     padding: 25px;
-    margin-bottom: 150px;;
+    margin-bottom: 150px;
 }
 
 h2
@@ -283,6 +288,17 @@ h2
     margin-top: 30px;
 }
 
+.presentation, .site-presentation
+{
+    width: 90%;
+}
+
+.presentation .biography h2, .site-presentation
+{
+    font-family: 'BrushScriptStd', Arial, serif;
+    font-size: 30px;
+}
+
 .presentation
 {
     height: 285px;
@@ -292,12 +308,33 @@ h2
 .presentation .biography
 {
     height: 285px;
-    margin: 0px 20px 100px 20px;
+    margin: 0 0 20px 30px;
 }
 
-.presentation img
+.site-presentation, .presentation .biography h2
 {
-    margin-left: 20px;
+    color: #5a5d5e;
+}
+
+.site-presentation
+{
+    margin: 30px 20px 110px 20px;
+}
+
+.presentation .biography h2
+{
+    margin-bottom: 20px;
+    font-size: 60px;
+}
+
+.signature
+{
+    text-align: right;
+}
+
+.presentation img, .presentation .biography, .site-presentation
+{
+    box-shadow: 4px 4px 15px black;
 }
 
 @media all and (min-width: 1199px)
@@ -327,25 +364,34 @@ h2
 }
 
 /* Mise en forme de la présentation de l'auteur pour que le texte ne sorte pas du cadre blanc */
-@media all and (max-width: 810px)
+@media all and (max-width: 991px)
 {
     .presentation
     {
         flex-direction: column;
+        height: auto;
     }
 
     .presentation .biography
     {
         height: auto;
         margin-top: 20px;
+        margin-left: 0;
     }
-    
+   
     .presentation img
     {
         margin-left: 0;
+        margin-bottom: 20px;
         max-width: 280px;
         height: auto;
         align-self: center;
+    }
+
+    .site-presentation
+    {
+        margin: 20px;
+        padding: 25px;
     }
 }
 
@@ -388,5 +434,29 @@ h2
         color: #fff;
         background-color: #989fa3;
         box-shadow: 0 2px 8px black;
+    }
+
+    .presentation
+    {
+        width: auto;
+    }
+
+    .site-presentation
+    {
+        width: auto;
+        margin: 20px 0 0 0;
+    }
+
+    .presentation .biography,
+    {
+        margin: 0;
+    }
+}
+
+@media all and (max-width: 375px)
+{
+    .site-presentation
+    {
+        font-size: 23px;
     }
 }

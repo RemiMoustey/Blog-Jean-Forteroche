@@ -8,7 +8,7 @@
     ?>
         <div class="news">
             <h3>
-                <a href="adminIndex.php?action=post&amp;id=<?= $data['id'] ?>"><?= $data['title'] ?></a>
+                <a href="adminIndex.php?action=post&amp;id=<?= $data['id'] ?>"><?= htmlspecialchars($data['title']) ?></a>
                 <span class="news-date">le <?= $data['creation_date_fr'] ?></span>
             </h3>
             

@@ -131,4 +131,4 @@
 </div>
 
 <?php $content = ob_get_clean() ?>
-<?php require('adminTemplate.php') ?>
+<?php require('./../public/template.php') ?>

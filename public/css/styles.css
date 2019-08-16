@@ -18,6 +18,11 @@
     font-size: 16px;
 }
 
+h2
+{
+    font-family: 'BrushScriptStd', Arial, serif;
+}
+
 body
 {
     margin-top: 60px;
@@ -29,20 +34,15 @@ body
     border: 1px solid black;
 }
 
-.navbar, .hero
-{
-    box-shadow: 0 2px 8px black;
-}
-
-.container-fluid
+.navbar-inverse
 {
     display: flex;
     justify-content: flex-end;
 }
 
-.navbar
+.navbar-inverse, .hero
 {
-    border: none;
+    box-shadow: 0 2px 8px black;
 }
 
 .navbar-inverse .navbar-nav>li>a
@@ -52,7 +52,7 @@ body
     font-size: 16px;
 }
 
-.nav, .container-fluid
+.nav, .navbar-inverse
 {
     background-color: #bec2c4;
 }
@@ -100,7 +100,7 @@ h1
     position: relative;
 }
 
-.news, .article, .comments, .form-login
+.news, .article, .comments, .form-login, .biography
 {
     margin-bottom: 25px;
     background-color: rgba(255, 255, 255, 0.8);
@@ -283,6 +283,23 @@ h2
     margin-top: 30px;
 }
 
+.presentation
+{
+    height: 285px;
+    display: flex;
+}
+
+.presentation .biography
+{
+    height: 285px;
+    margin: 0px 20px 100px 20px;
+}
+
+.presentation img
+{
+    margin-left: 20px;
+}
+
 @media all and (min-width: 1199px)
 {
     .text-image
@@ -309,11 +326,50 @@ h2
     }
 }
 
-@media all and (max-width: 768px)
+/* Mise en forme de la présentation de l'auteur pour que le texte ne sorte pas du cadre blanc */
+@media all and (max-width: 810px)
 {
-    .nav
+    .presentation
     {
-        display: flex;
+        flex-direction: column;
+    }
+
+    .presentation .biography
+    {
+        height: auto;
+        margin-top: 20px;
+    }
+    
+    .presentation img
+    {
+        margin-left: 0;
+        max-width: 280px;
+        height: auto;
+        align-self: center;
+    }
+}
+
+@media all and (max-width: 767px)
+{
+    .navbar-inverse
+    {
+        justify-content: center;
+    }
+
+    .navbar-fixed-top
+    {
+        position: absolute;
+        top: 0;
+    }
+
+    .navbar-inverse .navbar-nav>li>a
+    {
+        font-size: 13px;
+    }
+
+    .hero
+    {
+        margin-top: 135px;
     }
 
     h1
@@ -324,11 +380,6 @@ h2
     .bloc-page
     {
         background-image: url('../img/fond.png');
-    }
-    
-    .hero
-    {
-        padding-top: 5px;
     }
 
     .text-image

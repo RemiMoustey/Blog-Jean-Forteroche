@@ -5,13 +5,24 @@
 	<p class="link-home"><a href="adminIndex.php">Retour à l'accueil</a>
 	<div class="one-new">
 		<div class="article">
-			<h2 class="new-title"><?= $title ?></h2>
-			<h3>
-				<?= $post['creation_date_fr'] ?>
-			</h3>
-
+			<div class="header-article">
+				<div class="title-date-one-post">
+					<h2 class="new-title"><?= $title ?></h2>
+					<h3>
+						<?= $post['creation_date_fr'] ?>
+					</h3>
+				</div>
+				<p class="modify-delete-one-post link-posts">
+					<a href="adminIndex.php?action=modifyPost&amp;id=<?= $_GET['id'] ?>">Modifier</a> <br />
+					<a href="adminIndex.php?action=removePost&amp;id=<?= $_GET['id'] ?>" onclick="return(confirm('Êtes-vous sûr de vouloir supprimer ce billet ?'));">Supprimer</a>
+				</p>
+			</div>
 			<p>
 				<?= $post['content'] ?>
+			</p>
+			<p class="modify-delete-one-post-bottom link-posts">
+				<a href="adminIndex.php?action=modifyPost&amp;id=<?= $_GET['id'] ?>">Modifier</a> <br />
+				<a href="adminIndex.php?action=removePost&amp;id=<?= $_GET['id'] ?>" onclick="return(confirm('Êtes-vous sûr de vouloir supprimer ce billet ?'));">Supprimer</a>
 			</p>
 		</div>
 		

@@ -58,6 +58,10 @@ if (isset($_GET['action'])) {
 
         case 'login':
             $controller->login();
+            break;
+        
+        default:
+            echo "<p>Erreur 404.</p>";
 
     }
 }

@@ -155,7 +155,7 @@ h3
     font-style: italic;
 }
 
-.news h3 a, .news .link-comments a, .one-new .new-title, .link-home a, .comments h2, 
+.news h3 a, .news .link-comments a, .link-posts a, .one-new .new-title, .link-home a, .comments h2, 
 .report-link a, .article-rest a, .delete-comment-link a, .link-create-post a,
 .already-reported
 {
@@ -166,7 +166,7 @@ h3
 
 .news h3 a:hover, .news .link-comments a:hover, .link-home a:hover,
 .report-link a:hover, .article-rest a:hover, .delete-comment-link a:hover,
-.link-create-post a:hover
+.link-create-post a:hover, .link-posts a:hover
 {
     color: rgb(27, 158, 27);
 }
@@ -268,6 +268,19 @@ form button, form label
 h2
 {
     margin: 0;
+}
+
+.header-article
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.modify-delete-one-post-bottom
+{
+    margin-top: 30px;
 }
 
 @media all and (min-width: 1199px)

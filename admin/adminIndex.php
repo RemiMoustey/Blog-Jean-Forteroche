@@ -112,6 +112,10 @@ if (isset($_GET['action'])) {
             {
                 echo "<p>Erreur : aucun identifiant de commentaire envoyé";
             }
+            break;
+
+        default:
+            echo "<p>Erreur 404.</p>";
     }
 }
 

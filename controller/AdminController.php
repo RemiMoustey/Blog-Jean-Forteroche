@@ -21,7 +21,14 @@ class AdminController
 	    $PostManager = new \Blog\Model\PostManager();
 	    $CommentManager = new \Blog\Model\CommentManager();
 
-	    $post = $PostManager->getOnePost($_GET['id']);
+		$post = $PostManager->getOnePost($_GET['id']);
+		
+		if($post === false)
+		{
+			echo '<p>Impossible d\'afficher le billet.</p>';
+			return;
+		}
+
 		$comments = $CommentManager->getComments($_GET['id']);
 		$notifiedComments = $CommentManager->getNotifiedComments($_GET['id']);
 
@@ -36,7 +43,7 @@ class AdminController
 
 	    if ($affectedLines === false)
 	    {
-			throw new Exception('Impossible d\'ajouter le commentaire.');
+			echo '<p>Impossible d\'afficher le commentaire.</p>';
 			return;
 	    }
 		
@@ -51,7 +58,7 @@ class AdminController
 
 		if ($contentPost === false)
 		{
-			throw new Exception("Impossible d'ajouter le billet.");
+			echo '<p>Impossible de signaler le commentaire.</p>';
 			return;
 		}
 

@@ -2,7 +2,7 @@
 <?php ob_start() ?>
 
 <div class="one-new-index">
-	<p class="link-home"><a href="adminIndex.php">Retour à l'accueil</a>
+	<p class="link-home"><a href="adminChapters.php">Retour aux chapitres</a>
 	<div class="one-new">
 		<div class="article">
 			<div class="header-article">
@@ -13,16 +13,16 @@
 					</h3>
 				</div>
 				<p class="modify-delete-one-post link-posts">
-					<a href="adminIndex.php?action=modifyPost&amp;id=<?= $_GET['id'] ?>">Modifier</a> <br />
-					<a href="adminIndex.php?action=removePost&amp;id=<?= $_GET['id'] ?>" onclick="return(confirm('Êtes-vous sûr de vouloir supprimer ce billet ?'));">Supprimer</a>
+					<a href="adminChapters.php?action=modifyPost&amp;id=<?= $_GET['id'] ?>">Modifier</a> <br />
+					<a href="adminChapters.php?action=removePost&amp;id=<?= $_GET['id'] ?>" onclick="return(confirm('Êtes-vous sûr de vouloir supprimer ce billet ?'));">Supprimer</a>
 				</p>
 			</div>
 			<p>
 				<?= $post['content'] ?>
 			</p>
 			<p class="modify-delete-one-post-bottom link-posts">
-				<a href="adminIndex.php?action=modifyPost&amp;id=<?= $_GET['id'] ?>">Modifier</a> <br />
-				<a href="adminIndex.php?action=removePost&amp;id=<?= $_GET['id'] ?>" onclick="return(confirm('Êtes-vous sûr de vouloir supprimer ce billet ?'));">Supprimer</a>
+				<a href="adminChapters.php?action=modifyPost&amp;id=<?= $_GET['id'] ?>">Modifier</a> <br />
+				<a href="adminChapters.php?action=removePost&amp;id=<?= $_GET['id'] ?>" onclick="return(confirm('Êtes-vous sûr de vouloir supprimer ce billet ?'));">Supprimer</a>
 			</p>
 		</div>
 		
@@ -50,7 +50,7 @@
 					<h5>Commentaire</h5>
 					<p><?= htmlspecialchars($dataNotifiedComments['comment']) ?></p>
 
-					<p class="delete-comment-link"><a href="adminIndex.php?action=removeComment&amp;id=<?= $dataNotifiedComments['comment_id'] ?>&amp;post_id=<?= $dataNotifiedComments['post_id'] ?>" onclick="return(confirm('Êtes-vous sûr de vouloir supprimer ce commentaire ?'));">Supprimer</a></p>
+					<p class="delete-comment-link"><a href="adminChapters.php?action=removeComment&amp;id=<?= $dataNotifiedComments['comment_id'] ?>&amp;post_id=<?= $dataNotifiedComments['post_id'] ?>" onclick="return(confirm('Êtes-vous sûr de vouloir supprimer ce commentaire ?'));">Supprimer</a></p>
 				</div>
 			<?php
 			}
@@ -82,8 +82,8 @@
 				{
 					?>
 					<p class="report-link">
-						<a href="adminIndex.php?action=notifyComment&amp;id=<?= $data['id'] ?>#anchor-comments" onclick="return(confirm('Êtes-vous sûr de vouloir signaler ce commentaire ?'));"><i class="fas fa-exclamation-circle"></i> Signaler</a>
-						<p class="delete-comment-link"><a href="adminIndex.php?action=removeComment&amp;id=<?= $data['id'] ?>&amp;post_id=<?= $data['post_id'] ?>" onclick="return(confirm('Êtes-vous sûr de vouloir supprimer ce commentaire ?'));">Supprimer</a></p>
+						<a href="adminChapters.php?action=notifyComment&amp;id=<?= $data['id'] ?>#anchor-comments" onclick="return(confirm('Êtes-vous sûr de vouloir signaler ce commentaire ?'));"><i class="fas fa-exclamation-circle"></i> Signaler</a>
+						<p class="delete-comment-link"><a href="adminChapters.php?action=removeComment&amp;id=<?= $data['id'] ?>&amp;post_id=<?= $data['post_id'] ?>" onclick="return(confirm('Êtes-vous sûr de vouloir supprimer ce commentaire ?'));">Supprimer</a></p>
 					</p>
 				<?php
 				}
@@ -102,8 +102,8 @@
 						{
 				?>
 							<p class="report-link">
-							<a href="adminIndex.php?action=notifyComment&amp;id=<?= $data['id'] ?>"><i class="fas fa-exclamation-circle"></i> Signaler</a>
-							<p class="delete-comment-link"><a href="adminIndex.php?action=removeComment&amp;id=<?= $data['id'] ?>&amp;post_id=<?= $data['post_id'] ?>" onclick="return(confirm('Êtes-vous sûr de vouloir supprimer ce commentaire ?'));">Supprimer</a></p>
+							<a href="adminChapters.php?action=notifyComment&amp;id=<?= $data['id'] ?>"><i class="fas fa-exclamation-circle"></i> Signaler</a>
+							<p class="delete-comment-link"><a href="adminChapters.php?action=removeComment&amp;id=<?= $data['id'] ?>&amp;post_id=<?= $data['post_id'] ?>" onclick="return(confirm('Êtes-vous sûr de vouloir supprimer ce commentaire ?'));">Supprimer</a></p>
 						</p>
 				<?php
 						}
@@ -117,7 +117,7 @@
 			?>
 			<div class="form_add_comment">
 				<h2>Ajouter un commentaire</h2>
-				<form method="post" action="adminIndex.php?action=addComment&amp;id=<?= $_GET['id'] ?>">
+				<form method="post" action="adminChapters.php?action=addComment&amp;id=<?= $_GET['id'] ?>">
 					<label for="author">Auteur :</label>
 					<input type="text" name="author" class="form-control" required />
 					<label for="comment">Commentaire :</label>

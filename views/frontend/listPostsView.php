@@ -7,7 +7,7 @@
     ?>
         <div class="news">
             <h3>
-                <a href="index.php?action=post&amp;id=<?= $data['id'] ?>"><?= htmlspecialchars($data['title']) ?></a><br />
+                <a href="chapters.php?action=post&amp;id=<?= $data['id'] ?>"><?= htmlspecialchars($data['title']) ?></a><br />
                 <em><span class="news-date"> publié le <?= $data['creation_date_fr'] ?></span></em>
             </h3>
             
@@ -35,7 +35,7 @@
                 if(strlen($textContent) > 500)
                 {
                     echo $tagsContent . nl2br(substr($textContent, 0, 500)). "..."; ?>
-                    <p class="article-rest"><a href="index.php?action=post&id=<?= $data['id'] ?>">Lire la suite...</a></p>
+                    <p class="article-rest"><a href="chapters.php?action=post&id=<?= $data['id'] ?>">Lire la suite...</a></p>
                 <?php
                 }
                 else
@@ -44,7 +44,7 @@
                 }
                 ?>
                 
-                <p class="link-comments"><a href="index.php?action=post&amp;id=<?= $data['id'] ?>#anchor-comments">Voir les commentaires</a></p>
+                <p class="link-comments"><a href="chapters.php?action=post&amp;id=<?= $data['id'] ?>#anchor-comments">Voir les commentaires</a></p>
             </p>
         </div>
     <?php

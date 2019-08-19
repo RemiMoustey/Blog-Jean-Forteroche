@@ -48,7 +48,7 @@ class Controller
 			return;
 	    }
 		
-		header('Location: index.php?action=post&id=' . $postId . "#anchor-comments");
+		header('Location: chapters.php?action=post&id=' . $postId . "#anchor-comments");
     }
 
 	public function reportComment($commentId)
@@ -63,7 +63,7 @@ class Controller
 			return;
 		}
 
-		header('Location: index.php?action=post&id=' . $comment['post_id']);
+		header('Location: chapters.php?action=post&id=' . $comment['post_id']);
 	}
 
 	public function login()

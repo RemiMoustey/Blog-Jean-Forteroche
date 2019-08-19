@@ -1,71 +1,41 @@
-<?php
+<?php $title = "Jean Forteroche" ?>
+<?php ob_start() ?>
 
-use Blog\Controller;
-require('controller/Controller.php');
+<?php require_once('admin/auth.php'); ?>
 
-$controller = new Blog\Controller\Controller();
+<div class="bloc-page-index">
+	<div class="presentation">
+		<img src="public/img/jeanforteroche.jpg" alt="Photo de Jean Forteroche" />
+		<div class="biography">
+			<h1 class="brush">Jean Forteroche</h1>
+			<p>
+				Né en 1980 à Paris, Jean Forteroche est un romancier français. 
+				Il travaille également de temps en temps sur des scénarios de cinéma.
+				<span class="italic bold">Le Cœur Africain</span>, publié en 2004, reçoit le prix Roger-Nimier la même année et sa carrière connaît un premier temps fort. 
+				Toutefois, c’est son roman <span class="italic bold">Asie Souterraine</span> qui fait le plus parler de lui. Très controversé par les critiques, il est finaliste du Prix Renaudot et reçoit le Prix Goncourt des lycéens. Il obtient également le prix du meilleur roman de l'année en 2014. <br />
+				
+				Parmi ses œuvres, il faut aussi signaler <span class="italic bold">L'Univers Austral</span> paru en 2009.
 
-if (isset($_GET['action'])) {
-    switch ($_GET['action'])
-    {
-        case 'listPosts':
-            $controller->listPosts();
-            break;
+			</p>
+		</div>
+	</div>
+	<div class="site-presentation">
+		<p>
+			Bonjour et bienvenue sur mon site ! Je suis écrivain.<br />
+			J'ai souhaité vivre cette nouvelle expérience pour l'écriture de mon nouveau roman
+			"<strong class="italic">Billet simple pour l'Alaska</strong>".<br />
+			Je publierai régulièrement, chapitre par chapitre, quelques pages de mon roman. Vous pourrez
+			les découvrir sur ce site et me faire part de vos commentaires. Bonne lecture !<br />
+		</p>
+		<p class="signature">
+			Jean Forteroche
+		</p>
+	</div>
+	<?php
+	$linkButton = isAuthenticated() ? "admin/adminChapters.php" : "chapters.php";
+	?>
+	<p class="button-link-chapters"><a href=<?= $linkButton ?>><span class="main-title">Billet simple pour l'</span><span class="title-ending">Alaska</span></button></p>
+</div>
 
-        case 'post': 
-            if (isset($_GET['id']) AND $_GET['id'] > 0) 
-            {
-                $controller->onePost($_GET['id']);
-            }
-            else 
-            {
-                echo '<p>Erreur : aucun identifiant de billet envoyé</p>';
-            }
-            break;
-
-        case 'addComment':
-            if(!empty($_POST['author']) AND !empty($_POST['comment']))
-            {
-                $controller->addComment($_GET['id'], $_POST['author'], $_POST['comment']);
-            }
-            else
-            {
-                echo "<p>Erreur : tous les champs ne sont pas remplis.</p>";
-            }
-            break;
-        
-        case 'connexion':
-            if(!empty($_POST['login']) AND !empty($_POST['password']))
-            {
-                $controller->login($_POST['login'], $_POST['password']);
-            }
-            else
-            {
-                echo "<p>Erreur : tous les champs ne sont pas remplis.</p>";
-            }
-            break;
-
-        case 'notifyComment':
-            if (isset($_GET['id']) AND $_GET['id'] > 0)
-            {
-                $controller->reportComment($_GET['id']);
-            }
-            else
-            {
-                echo "<p>Erreur : aucun identifiant de commentaire envoyé"; 
-            }
-            break;
-
-        case 'login':
-            $controller->login();
-            break;
-        
-        default:
-            echo "<p>Erreur 404.</p>";
-
-    }
-}
-
-else {
-    $controller->listPosts();
-}
+<?php $content = ob_get_clean() ?>
+<?php require('public/template.php') ?>

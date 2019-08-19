@@ -16,12 +16,11 @@
 
 	<body>
 		<nav class="navbar navbar-inverse navbar-fixed-top">
-			<div class="container-fluid">
-				<ul class="nav navbar-nav">
-					<li><a href="adminIndex.php">Accueil</a></li>
-					<li><a href="logout.php">Se déconnecter</a></li>
-				</ul>
-			</div>
+			<ul class="nav navbar-nav">
+				<li><a href="index.php">Accueil</a></li>
+				<li><a href="./adminChapters.php">Chapitres</a></li>
+				<li><a href="logout.php">Se déconnecter</a></li>
+			</ul>
 		</nav>
 		<div class="hero">
 			<img src="../public/img/hero.jpg" alt="Un paysage d'Alaska" />
@@ -29,14 +28,14 @@
 		<div class="text-image">
 			<h1><span class="title-principle">Billet simple pour l'</span><span class="title-ending">Alaska</span></h1>
 		</div>
-		<p class="link-home"><a href="adminIndex.php">Retour à l'accueil</a>
+		<p class="link-home"><a href="adminChapters.php">Retour aux chapitres</a>
 
 		<div class="redaction">
-			<h2>Rédaction d'un billet</h2>
+			<h2>Rédaction d'un chapitre</h2>
 			<?php if(isset($_GET['id']))
-			{ ?> <form method="post" action="adminIndex.php?action=updatePost&amp;id=<?= $_GET['id'] ?>"> <?php }
+			{ ?> <form method="post" action="adminChapters.php?action=updatePost&amp;id=<?= $_GET['id'] ?>"> <?php }
 			else
-			{ ?> <form method="post" action="adminIndex.php?action=addPost"> <?php } ?>
+			{ ?> <form method="post" action="adminChapters.php?action=addPost"> <?php } ?>
 				<label for="title">Titre :</label>
 				<input type="text" name="title" value="<?php if(isset($_GET['id'])) echo $post['title'] ?>" />
 				<br />

@@ -7,6 +7,13 @@
 	src: local('BrushScriptStd'), url('fonts/BrushScriptStd.woff') format('woff'), url('fonts/BrushScriptStd.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'Mistral';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Mistral'), url('fonts/MISTRAL.woff') format('woff');
+}
+
 /* Éléments généraux */
 .bold
 {
@@ -18,7 +25,7 @@
     font-size: 16px;
 }
 
-strong
+.site-presentation strong
 {
     font-weight: normal;
 }
@@ -169,6 +176,16 @@ h3
     font-weight: bold;
 }
 
+.button-link-chapters a
+{
+    text-decoration: none;
+}
+
+.button-link-chapters a:hover
+{
+    color: white;
+}
+
 .news h3 a:hover, .news .link-comments a:hover, .link-home a:hover,
 .report-link a:hover, .article-rest a:hover, .delete-comment-link a:hover,
 .link-create-post a:hover, .link-posts a:hover
@@ -238,12 +255,17 @@ form button, form label
     margin-top: 10px;
 }
 
+.button-link-chapters
+{
+    font-size: 20px;
+}
+
 .link-home, .link-create-post
 {
     font-size: 20px;
 }
 
-.link-home a, .link-create-post a
+.link-home a, .link-create-post a, .button-link-chapters a
 {
     background-color: rgba(255, 255, 255, 0.7);
     padding: 5px 25px;
@@ -293,10 +315,10 @@ h2
     width: 90%;
 }
 
-.presentation .biography h2, .site-presentation
+.presentation .biography h1, .site-presentation
 {
-    font-family: 'BrushScriptStd', Arial, serif;
-    font-size: 30px;
+    font-family: 'Mistral', Arial, serif;
+    font-size: 34px;
 }
 
 .presentation
@@ -311,17 +333,22 @@ h2
     margin: 0 0 20px 30px;
 }
 
-.site-presentation, .presentation .biography h2
+.button-link-chapters a:hover
+{
+    background-color: rgba(90, 93, 94, 1);
+}
+
+.site-presentation, .presentation .biography h1, .button-link-chapters a
 {
     color: #5a5d5e;
 }
 
 .site-presentation
 {
-    margin: 30px 20px 110px 20px;
+    margin: 30px 20px 60px 20px;
 }
 
-.presentation .biography h2
+.presentation .biography h1
 {
     margin-bottom: 20px;
     font-size: 60px;

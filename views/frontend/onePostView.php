@@ -2,7 +2,7 @@
 <?php ob_start() ?>
 
 <div class="one-new-index">
-	<p class="link-home"><a href="index.php">Retour à l'accueil</a>
+	<p class="link-home"><a href="chapters.php">Retour aux chapitres</a>
 	<div class="one-new">
 		<div class="article">
 			<h2 class="new-title"><?= $title ?></h2>
@@ -42,7 +42,7 @@
 				{
 					?>
 					<p class="report-link">
-						<a href="index.php?action=notifyComment&amp;id=<?= $data['id'] ?>#anchor-comments" onclick="return(confirm('Êtes-vous sûr de vouloir signaler ce commentaire ?'));"><i class="fas fa-exclamation-circle"></i> Signaler</a>
+						<a href="chapters.php?action=notifyComment&amp;id=<?= $data['id'] ?>#anchor-comments" onclick="return(confirm('Êtes-vous sûr de vouloir signaler ce commentaire ?'));"><i class="fas fa-exclamation-circle"></i> Signaler</a>
 					</p>
 				<?php
 				}
@@ -61,7 +61,7 @@
 						{
 				?>
 							<p class="report-link">
-							<a href="index.php?action=notifyComment&amp;id=<?= $data['id'] ?>#anchor-comments" onclick="return(confirm('Êtes-vous sûr de vouloir signaler ce commentaire ?'));"><i class="fas fa-exclamation-circle"></i> Signaler</a>
+							<a href="chapters.php?action=notifyComment&amp;id=<?= $data['id'] ?>#anchor-comments" onclick="return(confirm('Êtes-vous sûr de vouloir signaler ce commentaire ?'));"><i class="fas fa-exclamation-circle"></i> Signaler</a>
 						</p>
 				<?php
 						}
@@ -75,7 +75,7 @@
 			?>
 			<div class="form_add_comment">
 				<h2>Ajouter un commentaire</h2>
-				<form method="post" action="index.php?action=addComment&amp;id=<?= $_GET['id'] ?>">
+				<form method="post" action="chapters.php?action=addComment&amp;id=<?= $_GET['id'] ?>">
 					<label for="author" required>Auteur :</label>
 					<input type="text" name="author" class="form-control" required />
 					<label for="comment">Commentaire :</label>

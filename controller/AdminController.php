@@ -47,7 +47,7 @@ class AdminController
 			return;
 	    }
 		
-		header('Location: adminIndex.php?action=post&id=' . $postId);
+		header('Location: adminChapters.php?action=post&id=' . $postId);
     }
     
     public function addPost($title, $content)
@@ -62,7 +62,7 @@ class AdminController
 			return;
 		}
 
-		header('Location: adminIndex.php');
+		header('Location: adminChapters.php');
     }
 
     public function modifyPost()
@@ -85,7 +85,7 @@ class AdminController
 			return;
 		}
 
-		header('Location: adminIndex.php');
+		header('Location: adminChapters.php');
     }
 
     public function removePost($postId)
@@ -99,7 +99,7 @@ class AdminController
 			return;
         }
 		
-		header('Location: adminIndex.php');
+		header('Location: adminChapters.php');
 	}
 	
 	public function reportComment($commentId)
@@ -114,7 +114,7 @@ class AdminController
 			return;
 		}
 
-		header('Location: adminIndex.php?action=post&id=' . $comment['post_id']);
+		header('Location: adminChapters.php?action=post&id=' . $comment['post_id']);
 	}
 
 	public function removeComment($commentId, $postId)
@@ -128,6 +128,6 @@ class AdminController
 			return;
 		}
 		
-		header('Location: adminIndex.php?action=post&id=' . $postId);
+		header('Location: adminChapters.php?action=post&id=' . $postId);
 	}
 }

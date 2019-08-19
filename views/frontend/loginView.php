@@ -8,7 +8,7 @@ if(!empty($_POST['login']) AND !empty($_POST['password']))
 	{
 		session_start();
 		$_SESSION['authenticated'] = 1;
-		header('Location: ./admin/adminIndex.php');
+		header('Location: ./admin/adminChapters.php');
 	}
 	else
 	{
@@ -19,7 +19,7 @@ if(!empty($_POST['login']) AND !empty($_POST['password']))
 require_once 'admin/auth.php';
 if(isAuthenticated())
 {
-	header('Location: ./admin/adminIndex.php');
+	header('Location: ./admin/adminChapters.php');
 }
 
 ?>

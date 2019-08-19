@@ -8,7 +8,7 @@
     ?>
         <div class="news">
             <h3>
-                <a href="adminIndex.php?action=post&amp;id=<?= $data['id'] ?>"><?= htmlspecialchars($data['title']) ?></a><br />
+                <a href="adminChapters.php?action=post&amp;id=<?= $data['id'] ?>"><?= htmlspecialchars($data['title']) ?></a><br />
                 <span class="news-date">le <?= $data['creation_date_fr'] ?></span>
             </h3>
             
@@ -36,7 +36,7 @@
                 if(strlen($textContent) > 500)
                 {
                     echo $tagsContent . nl2br(substr($textContent, 0, 500)). "..."; ?>
-                    <p class="article-rest"><a href="adminIndex.php?action=post&id=<?= $data['id'] ?>">Lire la suite...</a></p>
+                    <p class="article-rest"><a href="adminChapters.php?action=post&id=<?= $data['id'] ?>">Lire la suite...</a></p>
                 <?php
                 }
                 else
@@ -45,9 +45,9 @@
                 }
                 ?>
                 
-                <p class="link-posts modify-margin"><a href="adminIndex.php?action=modifyPost&amp;id=<?= $data['id'] ?>">Modifier</a></p>
-                <p class="link-posts"><a href="adminIndex.php?action=removePost&amp;id=<?= $data['id'] ?>" onclick="return(confirm('Êtes-vous sûr de vouloir supprimer ce billet ?'));">Supprimer</a></p>
-                <p class="link-comments"><a href="adminIndex.php?action=post&amp;id=<?= $data['id'] ?>#anchor-comments">Voir les commentaires</a></p>
+                <p class="link-posts modify-margin"><a href="adminChapters.php?action=modifyPost&amp;id=<?= $data['id'] ?>">Modifier</a></p>
+                <p class="link-posts"><a href="adminChapters.php?action=removePost&amp;id=<?= $data['id'] ?>" onclick="return(confirm('Êtes-vous sûr de vouloir supprimer ce billet ?'));">Supprimer</a></p>
+                <p class="link-comments"><a href="adminChapters.php?action=post&amp;id=<?= $data['id'] ?>#anchor-comments">Voir les commentaires</a></p>
             </p>
         </div>
     <?php

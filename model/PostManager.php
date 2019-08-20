@@ -1,6 +1,7 @@
 <?php
 
 namespace Blog\Model;
+define('PER_PAGE', 5);
 require_once('PDOFactory.php');
 
 class PostManager extends PDOFactory
@@ -8,7 +9,7 @@ class PostManager extends PDOFactory
 	public function getPosts()
 	{
 		$db = $this->getMysqlConnexion();
-		return $db->query('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %H:%i\') AS creation_date_fr FROM posts ORDER BY creation_date_fr DESC LIMIT 0, 10');
+		return $db->query('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %H:%i\') AS creation_date_fr FROM posts ORDER BY creation_date_fr DESC LIMIT ' . PER_PAGE);
 	}
 
 	public function getOnePost($postId)

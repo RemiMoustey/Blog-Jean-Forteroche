@@ -26,7 +26,7 @@
 			<img src="../public/img/hero.jpg" alt="Un paysage d'Alaska" />
 		</div>
 		<div class="text-image">
-			<h1><span class="title-principle">Billet simple pour l'</span><span class="title-ending">Alaska</span></h1>
+			<h1><span class="main-title">Billet simple pour l'</span><span class="title-ending">Alaska</span></h1>
 		</div>
 		<p class="link-home"><a href="adminChapters.php">Retour aux chapitres</a>
 

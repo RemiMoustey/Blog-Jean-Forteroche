@@ -2,6 +2,10 @@
 <?php ob_start() ?>
 <div class="bloc-page-index">
     <?php
+/*     $postsCount = $posts;
+    $postsNumber = count($postsCount->fetchAll());
+    $pages = (int)ceil($postsNumber / PER_PAGE); */
+
     while ($data = $posts->fetch())
     {
     ?>
@@ -50,6 +54,12 @@
     <?php
     }
     $posts->closeCursor();
+    /* if ($pages > 1)
+    {
+    ?>
+        <a href="?p=2">Chapitres suivants</a>
+    <?php
+    } */
     ?>
 </div>
 

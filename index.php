@@ -38,4 +38,4 @@
 </div>
 
 <?php $content = ob_get_clean() ?>
-<?php require('public/template.php') ?>
+<?php require(__DIR__ . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . 'template.php') ?>

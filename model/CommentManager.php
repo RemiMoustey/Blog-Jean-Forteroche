@@ -1,6 +1,7 @@
 <?php
 
 namespace Blog\Model;
+
 require_once('PDOFactory.php');
 
 class CommentManager extends PDOFactory

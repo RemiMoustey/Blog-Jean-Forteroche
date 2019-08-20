@@ -450,6 +450,11 @@ h2
         margin: 0 0 100px 0;
     }
 
+    h2, .link-comments, .news h3
+    {
+        text-align: left;
+    }
+
     .bloc-page
     {
         background-image: url('../img/fond.png');

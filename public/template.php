@@ -44,7 +44,7 @@
 					{
 				?>
 					<li><a href="#">Accueil</a></li>
-					<li><a href="../chapters.php">Chapitres</a></li>
+					<li><a href="chapters.php">Chapitres</a></li>
 					<li><a href="chapters.php?action=login">Connexion</a></li>
 				<?php
 					}

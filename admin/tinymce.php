@@ -11,7 +11,14 @@
 		</script>
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous" />
-		<link rel="stylesheet" href="../public/css/styles.css" />
+		<link rel="stylesheet" href="./../public/css/font-families.css" />
+		<link rel="stylesheet" href="../public/css/main.css" />
+		<link rel="stylesheet" href="../public/css/navbar.css" />
+		<link rel="stylesheet" href="../public/css/hero.css" />
+		<link rel="stylesheet" href="../public/css/body.css" />
+		<link rel="stylesheet" href="../public/css/form-login.css" />
+		<link rel="stylesheet" href="../public/css/links.css" />
+		<link rel="stylesheet" href="../public/css/media-queries.css" />
 	</head>
 
 	<body>

@@ -1,0 +1,102 @@
+/* Éléments généraux */
+
+body
+{
+    margin-top: 60px;
+    background-image: url('../img/fond.png');
+}
+
+.bold
+{
+    font-weight: bold;
+}
+
+.italic
+{
+    font-style: italic;
+}
+
+h1
+{
+    font-size: 50px;
+}
+
+h2
+{
+    margin: 0;
+}
+
+h3
+{
+    margin: 0;
+}
+
+.site-presentation strong
+{
+    font-weight: normal;
+}
+
+.title-ending
+{
+    font-family: 'Arial Black', Arial, serif;
+    text-transform: uppercase;
+    margin-left: 5px;
+}
+
+.bloc-page-index, .one-new-index
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.presentation, .site-presentation
+{
+    width: 90%;
+}
+
+.presentation .biography h1, .site-presentation
+{
+    font-family: 'Mistral', Arial, serif;
+    font-size: 34px;
+}
+
+.presentation
+{
+    height: 285px;
+    display: flex;
+    margin-top: 100px;
+}
+
+.presentation .biography
+{
+    height: 285px;
+    margin: 0 0 20px 30px;
+}
+
+.site-presentation, .presentation .biography h1, .button-link-chapters a
+{
+    color: #5a5d5e;
+}
+
+.site-presentation
+{
+    margin: 30px 20px 60px 20px;
+}
+
+.presentation .biography h1
+{
+    margin-bottom: 10px;
+    font-size: 60px;
+}
+
+.signature
+{
+    text-align: right;
+}
+
+.presentation img, .presentation .biography, .site-presentation
+{
+    box-shadow: 4px 4px 15px black;
+}

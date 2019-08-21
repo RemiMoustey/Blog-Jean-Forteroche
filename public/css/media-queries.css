@@ -1,0 +1,128 @@
+@media all and (min-width: 1199px)
+{
+    .text-image
+    {
+        top: -140px;
+    }
+
+    .text-image h1
+    {
+        font-size: 70px;
+    }
+}
+
+@media all and (min-width: 1470px)
+{
+    .text-image
+    {
+        top: -200px;
+    }
+
+    .text-image h1
+    {
+        font-size: 90px;
+    }
+}
+
+/* Mise en forme de la présentation de l'auteur pour que le texte ne sorte pas du cadre blanc */
+@media all and (max-width: 991px)
+{
+    .presentation
+    {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .presentation .biography
+    {
+        height: auto;
+        margin-top: 20px;
+        margin-left: 0;
+    }
+   
+    .presentation img
+    {
+        margin-left: 0;
+        margin-bottom: 20px;
+        max-width: 280px;
+        height: auto;
+        align-self: center;
+    }
+
+    .site-presentation
+    {
+        margin: 20px;
+        padding: 25px;
+    }
+}
+
+@media all and (max-width: 767px)
+{
+    .navbar-inverse
+    {
+        justify-content: center;
+    }
+
+    .navbar-fixed-top
+    {
+        position: absolute;
+        top: 0;
+    }
+
+    .navbar-inverse .navbar-nav>li>a
+    {
+        font-size: 13px;
+    }
+
+    .hero
+    {
+        margin-top: 135px;
+    }
+
+    h1
+    {
+        margin: 0 0 100px 0;
+    }
+
+    h2, .link-comments, .news h3
+    {
+        text-align: left;
+    }
+
+    .bloc-page
+    {
+        background-image: url('../img/fond.png');
+    }
+
+    .text-image
+    {
+        top: 0;
+        color: #fff;
+        background-color: #989fa3;
+        box-shadow: 0 2px 8px black;
+    }
+
+    .presentation
+    {
+        width: auto;
+    }
+
+    .site-presentation
+    {
+        width: auto;
+        margin: 20px 0 0 0;
+    }
+
+    .presentation .biography
+    {
+        margin: 0;
+    }
+}
+
+@media all and (max-width: 375px)
+{
+    .site-presentation
+    {
+        font-size: 23px;
+    }
+}

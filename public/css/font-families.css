@@ -1,0 +1,15 @@
+/* Polices d'écriture */
+
+@font-face 
+{
+	font-family: 'BrushScriptStd';
+	src: url('./BrushScriptStd.eot');
+	src: local('BrushScriptStd'), url('fonts/BrushScriptStd.woff') format('woff'), url('fonts/BrushScriptStd.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Mistral';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Mistral'), url('fonts/MISTRAL.woff') format('woff');
+}

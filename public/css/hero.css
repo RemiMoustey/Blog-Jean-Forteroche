@@ -1,0 +1,22 @@
+.hero
+{
+    margin-top: -10px;
+}
+
+.hero img
+{
+    width: 100%;
+}
+
+.text-image
+{
+    position: relative;
+    top: -120px;
+    text-align: center;
+    color: #fff;
+}
+
+.main-title
+{
+    font-family: 'BrushScriptStd', Arial, serif;
+}

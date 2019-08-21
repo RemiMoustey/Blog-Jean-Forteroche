@@ -1,0 +1,159 @@
+/* Généralités */
+
+.news, .link-home a, .link-create-post a, .article, .comments, .form-login, .redaction, .link-page a
+{
+    border: 1px solid black;
+}
+
+.news, .article, .comments, .form-login, .biography, .site-presentation
+{
+    margin-bottom: 25px;
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: justify;
+    padding: 25px;
+}
+
+.size-date
+{
+    font-size: 16px;
+}
+
+.news-date, .comment-date
+{
+    font-style: italic;
+}
+
+.news-date, .link-comments
+{
+    font-size: 18px;
+}
+
+.news h3 a, .news .link-comments a, .link-posts a, .one-new .new-title, .link-home a, .comments h2, 
+.report-link a, .article-rest a, .delete-comment-link a, .link-create-post a, .link-page a,
+.already-reported
+{
+    color: #ce3a84;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.news h3 a:hover, .news .link-comments a:hover, .link-home a:hover,
+.report-link a:hover, .article-rest a:hover, .delete-comment-link a:hover,
+.link-create-post a:hover, .link-posts a:hover, .link-page a:hover
+{
+    color: rgb(27, 158, 27);
+}
+
+.link-create-post, .link-page
+{
+    margin-bottom: 25px;
+}
+
+.modify-margin
+{
+    margin-top: 40px;
+}
+
+/* Chapitres */
+
+.news
+{
+    width: 70%;
+    word-wrap: break-word;
+}
+
+.news h3 a
+{
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.one-new-index
+{
+    position: relative;
+    top: -30px;
+}
+
+.one-new
+{
+    width: 85%;
+}
+
+.button-link-chapters
+{
+    font-size: 20px;
+}
+
+.redaction
+{
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 70%;
+    margin: auto;
+    padding: 25px;
+    margin-bottom: 150px;
+}
+
+.header-article
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* Commentaires */
+
+.comments
+{
+    margin-top: 25px;
+}
+
+.comment-title
+{
+    margin-top: 30px;
+}
+
+.comment-date
+{
+    font-size: 16px;
+}
+
+.button-link-chapters a
+{
+    text-decoration: none;
+}
+
+.button-link-chapters a:hover
+{
+    color: white;
+}
+
+.bloc-comment
+{
+    margin-bottom: 30px;
+}
+
+.comments h4
+{
+    font-size: 20px;
+}
+
+.comments h5
+{
+    font-weight: bold;
+}
+
+.comments form
+{
+    width: 50%;
+}
+
+.comments-author
+{
+    font-weight: bold;
+}
+
+.comments-date
+{
+   font-size: 15px; 
+}

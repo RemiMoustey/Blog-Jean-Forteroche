@@ -1,0 +1,21 @@
+.form-login
+{
+    width: 300px;
+    margin: auto;
+    margin-bottom: 150px;
+}
+
+.incorrect-ids
+{
+    width: 300px;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+form button, form label
+{
+    margin-top: 10px;
+}

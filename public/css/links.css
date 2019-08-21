@@ -1,0 +1,26 @@
+.link-home, .link-create-post, .link-page
+{
+    font-size: 20px;
+}
+
+.link-home a, .link-create-post a, .button-link-chapters a, .link-page a
+{
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 5px 25px;
+}
+
+.link-home
+{
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.modify-delete-one-post-bottom
+{
+    margin-top: 30px;
+}
+
+.button-link-chapters a:hover
+{
+    background-color: rgba(90, 93, 94, 1);
+}

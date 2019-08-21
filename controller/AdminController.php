@@ -12,6 +12,7 @@ class AdminController
 	{
 		$PostManager = new \Blog\Model\PostManager();
 		$posts = $PostManager->getPosts();
+		$countPosts = $PostManager->countPosts();
 
 		require('../admin/views/frontend/adminListPostsView.php');
 	}

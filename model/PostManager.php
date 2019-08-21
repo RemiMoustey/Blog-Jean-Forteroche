@@ -9,7 +9,19 @@ class PostManager extends PDOFactory
 	public function getPosts()
 	{
 		$db = $this->getMysqlConnexion();
-		return $db->query('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %H:%i\') AS creation_date_fr FROM posts ORDER BY creation_date_fr DESC LIMIT ' . PER_PAGE);
+		$page = (int)($_GET['p'] ?? 1);
+		$offset = ($page - 1) * PER_PAGE;
+		if ($offset < 0)
+		{
+			$offset = 0;
+		}
+		return $db->query('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %H:%i\') AS creation_date_fr FROM posts ORDER BY creation_date_fr DESC LIMIT ' . PER_PAGE . " OFFSET $offset");
+	}
+
+	public function countPosts()
+	{
+		$db = $this->getMysqlConnexion();
+		return $db->query("SELECT count(id) as count FROM posts");
 	}
 
 	public function getOnePost($postId)

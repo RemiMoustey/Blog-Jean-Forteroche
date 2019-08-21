@@ -2,10 +2,7 @@
 <?php ob_start() ?>
 <div class="bloc-page-index">
     <?php
-/*     $postsCount = $posts;
-    $postsNumber = count($postsCount->fetchAll());
-    $pages = (int)ceil($postsNumber / PER_PAGE); */
-
+    $count = (int)$countPosts->fetch()['count'];
     while ($data = $posts->fetch())
     {
     ?>
@@ -54,12 +51,20 @@
     <?php
     }
     $posts->closeCursor();
-    /* if ($pages > 1)
+    $pages = ceil($count / PER_PAGE);
+    $page = (int)($_GET['p'] ?? 1);
+    if ($pages > 1 && $page > 1)
     {
     ?>
-        <a href="?p=2">Chapitres suivants</a>
+        <a href="?p=<?= $page - 1 ?>">Chapitres précédants</a>
     <?php
-    } */
+    }
+    if ($pages > 1 && $page < $pages)
+    {
+    ?>
+        <a href="?p=<?= $page + 1 ?>">Chapitres suivants</a>
+    <?php
+    }
     ?>
 </div>
 

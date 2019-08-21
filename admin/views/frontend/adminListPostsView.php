@@ -3,6 +3,7 @@
 <div class="bloc-page-index">
     <p class="link-create-post"><a href="tinymce.php">Écrire un billet</a></p>
     <?php
+    $count = (int)$countPosts->fetch()['count'];
     while ($data = $posts->fetch())
     {
     ?>
@@ -53,6 +54,20 @@
     <?php
     }
     $posts->closeCursor();
+    $pages = ceil($count / PER_PAGE);
+    $page = (int)($_GET['p'] ?? 1);
+    if ($pages > 1 && $page > 1)
+    {
+    ?>
+        <a href="?p=<?= $page - 1 ?>">Chapitres précédants</a>
+    <?php
+    }
+    if ($pages > 1 && $page < $pages)
+    {
+    ?>
+        <a href="?p=<?= $page + 1 ?>">Chapitres suivants</a>
+    <?php
+    }
     ?>
 </div>
 

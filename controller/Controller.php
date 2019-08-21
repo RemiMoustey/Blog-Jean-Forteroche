@@ -13,6 +13,7 @@ class Controller
 	{
 		$PostManager = new \Blog\Model\PostManager();
 		$posts = $PostManager->getPosts();
+		$countPosts = $PostManager->countPosts();
 
 		require('views/frontend/listPostsView.php');
 	}

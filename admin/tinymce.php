@@ -17,7 +17,7 @@
 	<body>
 		<nav class="navbar navbar-inverse navbar-fixed-top">
 			<ul class="nav navbar-nav">
-				<li><a href="index.php">Accueil</a></li>
+				<li><a href="./../index.php">Accueil</a></li>
 				<li><a href="./adminChapters.php">Chapitres</a></li>
 				<li><a href="logout.php">Se déconnecter</a></li>
 			</ul>

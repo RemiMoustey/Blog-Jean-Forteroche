@@ -9,6 +9,11 @@ require_once('model/LogsManager.php');
 
 class Controller
 {
+	/**
+     * Récupère les chapitres et le nombre de chapitres pour la pagination
+     *
+     * @return void (cette méthode est utile pour les vues)
+     */
 	public function listPosts()
 	{
 		$PostManager = new \Blog\Model\PostManager();
@@ -18,6 +23,11 @@ class Controller
 		require('views/frontend/listPostsView.php');
 	}
 
+	/**
+	 * Récupère un post sélectionné au préalable
+	 *
+	 * @return void (cette méthode est utile pour les vues)
+	 */
 	public function onePost()
 	{
 	    $PostManager = new \Blog\Model\PostManager();
@@ -37,6 +47,15 @@ class Controller
 	    require('views/frontend/onePostView.php');
 	}
 
+	/**
+	 * Envoie les données du commentaire ajouté à la base de données
+	 *
+	 * @param  string $postId
+	 * @param  string $author
+	 * @param  string $comment
+	 *
+	 * @return void (cette méthode est utile pour la vue)
+	 */
 	public function addComment($postId, $author, $comment)
 	{
 	    $CommentManager = new \Blog\Model\CommentManager();
@@ -50,8 +69,15 @@ class Controller
 	    }
 		
 		header('Location: chapters.php?action=post&id=' . $postId . "#anchor-comments");
-    }
-
+	}
+	
+	/**
+	 * Envoie l'identifiant du commentaire signalé afin qu'il soit ajouter à la table notifiedcomments
+	 *
+	 * @param  string $commentId
+	 *
+	 * @return void (cette méthode est utile pour les vues)
+	 */
 	public function reportComment($commentId)
 	{
 		$CommentManager = new \Blog\Model\CommentManager;
@@ -67,6 +93,11 @@ class Controller
 		header('Location: chapters.php?action=post&id=' . $comment['post_id']);
 	}
 
+	/**
+	 * Récupère le login et le mot de passe hashé de la base de données en vue de l'authentification
+	 *
+	 * @return void
+	 */
 	public function login()
 	{
 		$logsManager = new \Blog\Model\LogsManager;

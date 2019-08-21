@@ -59,13 +59,17 @@
     if ($pages > 1 && $page > 1)
     {
     ?>
-        <a href="?p=<?= $page - 1 ?>">Chapitres précédants</a>
+        <p class="link-page">
+            <a href="?p=<?= $page - 1 ?>">Chapitres précédants</a>
+        </p>
     <?php
     }
     if ($pages > 1 && $page < $pages)
     {
     ?>
-        <a href="?p=<?= $page + 1 ?>">Chapitres suivants</a>
+        <p class="link-page">
+            <a href="?p=<?= $page + 1 ?>">Chapitres suivants</a>
+        </p>
     <?php
     }
     ?>

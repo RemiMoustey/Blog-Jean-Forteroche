@@ -5,6 +5,11 @@ require_once('PDOFactory.php');
 
 class LogsManager extends PDOFactory
 {
+    /**
+     * Sélectionne les identifiants de l'administrateur du blog
+     *
+     * @return array
+     */
     public function getLogs()
 	{
 		$db = $this->getMysqlConnexion();

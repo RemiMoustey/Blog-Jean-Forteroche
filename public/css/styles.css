@@ -41,7 +41,7 @@ body
     background-image: url('../img/fond.png');
 }
 
-.news, .link-home a, .link-create-post a, .article, .comments, .form-login, .redaction
+.news, .link-home a, .link-create-post a, .article, .comments, .form-login, .redaction, .link-page a
 {
     border: 1px solid black;
 }
@@ -168,7 +168,7 @@ h3
 }
 
 .news h3 a, .news .link-comments a, .link-posts a, .one-new .new-title, .link-home a, .comments h2, 
-.report-link a, .article-rest a, .delete-comment-link a, .link-create-post a,
+.report-link a, .article-rest a, .delete-comment-link a, .link-create-post a, .link-page a,
 .already-reported
 {
     color: #ce3a84;
@@ -188,12 +188,12 @@ h3
 
 .news h3 a:hover, .news .link-comments a:hover, .link-home a:hover,
 .report-link a:hover, .article-rest a:hover, .delete-comment-link a:hover,
-.link-create-post a:hover, .link-posts a:hover
+.link-create-post a:hover, .link-posts a:hover, .link-page a:hover
 {
     color: rgb(27, 158, 27);
 }
 
-.link-create-post
+.link-create-post, .link-page
 {
     margin-bottom: 25px;
 }
@@ -260,12 +260,12 @@ form button, form label
     font-size: 20px;
 }
 
-.link-home, .link-create-post
+.link-home, .link-create-post, .link-page
 {
     font-size: 20px;
 }
 
-.link-home a, .link-create-post a, .button-link-chapters a
+.link-home a, .link-create-post a, .button-link-chapters a, .link-page a
 {
     background-color: rgba(255, 255, 255, 0.7);
     padding: 5px 25px;

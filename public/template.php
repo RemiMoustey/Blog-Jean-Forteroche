@@ -83,7 +83,7 @@
 			</ul>
 		</nav>
 		<?php
-		if($_SERVER['REQUEST_URI'] !== '/projet4/index.php')
+		if($_SERVER['REQUEST_URI'] !== '/projet4/index.php' AND $_SERVER['REQUEST_URI'] !== '/projet4/')
 		{
 		?>
 			<div class="hero">

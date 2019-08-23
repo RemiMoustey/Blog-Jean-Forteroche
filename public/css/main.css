@@ -56,7 +56,7 @@ h3
     width: 90%;
 }
 
-.presentation .biography h1, .site-presentation
+.site-presentation
 {
     font-family: 'Mistral', Arial, serif;
     font-size: 34px;
@@ -87,8 +87,9 @@ h3
 
 .presentation .biography h1
 {
+    font-family: 'BrushScriptStd', Arial, serif;
     margin-bottom: 10px;
-    font-size: 60px;
+    font-size: 65px;
 }
 
 .signature

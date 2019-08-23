@@ -4,6 +4,13 @@ namespace Blog\Model;
 define('PER_PAGE', 5);
 require_once('PDOFactory.php');
 
+/**
+  * Récupère les informations brutes sur les chapitres dans la base de données et les organise
+  * selon différentes nécessités afin qu'elles puissent être traitées par le
+  * contrôleur.
+  *
+  * @author  Rémi Moustey <remimoustey@gmail.com>
+  */
 class PostManager extends PDOFactory
 {
 	/**

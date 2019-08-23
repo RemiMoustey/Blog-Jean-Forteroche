@@ -82,40 +82,45 @@
 				?>
 			</ul>
 		</nav>
-		<div class="hero">
 		<?php
-		if(preg_match("#^/projet4/admin[a-z0-9._\-/=&?]?#", $_SERVER['REQUEST_URI']))
+		if($_SERVER['REQUEST_URI'] !== '/projet4/index.php')
 		{
 		?>
-			<img src="./../public/img/hero.jpg" alt="Un paysage d'Alaska" />
-			</div>
-			<div class="text-image">
-				<h1><span class="main-title">Billet simple pour l'</span><span class="title-ending">Alaska</span></h1>
-			</div>
-		<?php
-		}
-		elseif(preg_match("#/projet4[a-z0-9._\-/=&?]?#", $_SERVER['REQUEST_URI']))
-		{
-		?>
-		<?php
-			if(!($_SERVER['REQUEST_URI'] === "/projet4/" OR $_SERVER['REQUEST_URI'] === "/projet4/index.php"))
+			<div class="hero">
+			<?php
+			if(preg_match("#^/projet4/admin[a-z0-9._\-/=&?]?#", $_SERVER['REQUEST_URI']))
 			{
 			?>
-			<img src="./public/img/hero.jpg" alt="Un paysage d'Alaska" />
-			</div>
-			<div class="text-image">
-				<h1><span class="main-title">Billet simple pour l'</span><span class="title-ending">Alaska</span></h1>
-			</div>
+				<img src="./../public/img/hero.jpg" alt="Un paysage d'Alaska" />
+				</div>
+				<div class="text-image">
+					<h1><span class="main-title">Billet simple pour l'</span><span class="title-ending">Alaska</span></h1>
+				</div>
 			<?php
 			}
-		?>
+			elseif(preg_match("#/projet4[a-z0-9._\-/=&?]?#", $_SERVER['REQUEST_URI']))
+			{
+			?>
+			<?php
+				if(!($_SERVER['REQUEST_URI'] === "/projet4/" OR $_SERVER['REQUEST_URI'] === "/projet4/index.php"))
+				{
+				?>
+				<img src="./public/img/hero.jpg" alt="Un paysage d'Alaska" />
+				</div>
+				<div class="text-image">
+					<h1><span class="main-title">Billet simple pour l'</span><span class="title-ending">Alaska</span></h1>
+				</div>
+				<?php
+				}
+			?>
+			<?php
+			}
+			else
+			{
+			?>
+			</div>
 		<?php
-		}
-		else
-		{
-		?>
-		</div>
-		<?php
+			}
 		}
 		?>
 		<?= $content ?>

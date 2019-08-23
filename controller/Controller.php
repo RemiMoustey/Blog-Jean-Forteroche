@@ -7,6 +7,12 @@ require_once('model/PostManager.php');
 require_once('model/CommentManager.php');
 require_once('model/LogsManager.php');
 
+/**
+  * Récupère les données demandées au modèle et renvoie les éléments à afficher à la
+  * vue côté utilisateur standard.
+  *
+  * @author  Rémi Moustey <remimoustey@gmail.com>
+  */
 class Controller
 {
 	/**

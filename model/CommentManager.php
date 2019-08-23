@@ -4,6 +4,13 @@ namespace Blog\Model;
 
 require_once('PDOFactory.php');
 
+/**
+  * Récupère les informations brutes sur les commentaires dans la base de données et les organise
+  * selon différentes nécessités afin qu'elles puissent être traitées par le
+  * contrôleur.
+  *
+  * @author  Rémi Moustey <remimoustey@gmail.com>
+  */
 class CommentManager extends PDOFactory
 {
 	/**

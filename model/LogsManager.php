@@ -3,6 +3,12 @@
 namespace Blog\Model;
 require_once('PDOFactory.php');
 
+/**
+  * Récupère dans la base de données les informations de connexion (login et mot de passe hashé)
+  * à entrer pour se connecter à l'interface administrateur.
+  *
+  * @author  Rémi Moustey <remimoustey@gmail.com>
+  */
 class LogsManager extends PDOFactory
 {
     /**

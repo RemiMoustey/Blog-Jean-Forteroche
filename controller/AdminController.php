@@ -6,6 +6,12 @@ use \Blog\Model;
 require_once('../model/PostManager.php');
 require_once('../model/CommentManager.php');
 
+/**
+  * Récupère les données demandées au modèle et renvoie les éléments à afficher à la
+  * vue côté administrateur.
+  *
+  * @author  Rémi Moustey <remimoustey@gmail.com>
+  */
 class AdminController
 {
     /**

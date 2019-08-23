@@ -2,7 +2,12 @@
 
 namespace Blog\Model;
 
-// Toutes les autres classes du modèle héritent de cette classe
+/**
+  * Permet une connexion à la base de données en vue de récupérer les informations.
+  * Toutes les classes du modèle en héritent.
+  *
+  * @author  Rémi Moustey <remimoustey@gmail.com>
+  */
 abstract class PDOFactory
 {
 	/**

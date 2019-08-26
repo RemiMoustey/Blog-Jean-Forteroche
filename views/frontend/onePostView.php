@@ -9,10 +9,7 @@
 			<h3>
 				Le <?= $post['creation_date_fr'] ?>
 			</h3>
-
-			<p>
-				<?= $post['content'] ?>
-			</p>
+			<?= $post['content'] ?>
 		</div>
 
 		<div class="comments" id="anchor-comments">
@@ -76,7 +73,7 @@
 			<div class="form_add_comment">
 				<h2>Ajouter un commentaire</h2>
 				<form method="post" action="chapters.php?action=addComment&amp;id=<?= $_GET['id'] ?>">
-					<label for="author" required>Auteur :</label>
+					<label for="author">Auteur :</label>
 					<input type="text" name="author" class="form-control" required />
 					<label for="comment">Commentaire :</label>
 					<textarea name="comment" class="form-control" rows="4" required></textarea>

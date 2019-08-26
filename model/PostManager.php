@@ -43,7 +43,7 @@ class PostManager extends PDOFactory
 	}
 
 	/**
-	 * Sélectionne un chapitre sélectionné dans la base de données
+	 * Sélectionne un chapitre sélectionné par l'utilisateur dans la base de données
 	 *
 	 * @param  string $postId
 	 *
@@ -94,7 +94,7 @@ class PostManager extends PDOFactory
 	}
 
 	/**
-	 * Retire un chapitre supprimé par l'utilisateur de la base de données
+	 * Retire un chapitre supprimé par l'administrateur de la base de données
 	 *
 	 * @param  string $postId
 	 *

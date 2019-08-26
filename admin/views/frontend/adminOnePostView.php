@@ -17,9 +17,7 @@
 					<a href="adminChapters.php?action=removePost&amp;id=<?= $_GET['id'] ?>" onclick="return(confirm('Êtes-vous sûr de vouloir supprimer ce billet ?'));">Supprimer</a>
 				</p>
 			</div>
-			<p>
-				<?= $post['content'] ?>
-			</p>
+			<?= $post['content'] ?>
 			<p class="modify-delete-one-post-bottom link-posts">
 				<a href="adminChapters.php?action=modifyPost&amp;id=<?= $_GET['id'] ?>">Modifier</a> <br />
 				<a href="adminChapters.php?action=removePost&amp;id=<?= $_GET['id'] ?>" onclick="return(confirm('Êtes-vous sûr de vouloir supprimer ce billet ?'));">Supprimer</a>
@@ -119,9 +117,9 @@
 				<h2>Ajouter un commentaire</h2>
 				<form method="post" action="adminChapters.php?action=addComment&amp;id=<?= $_GET['id'] ?>">
 					<label for="author">Auteur :</label>
-					<input type="text" name="author" class="form-control" required />
+					<input type="text" name="author" id="author" class="form-control" required />
 					<label for="comment">Commentaire :</label>
-					<textarea name="comment" class="form-control" rows="4" required></textarea>
+					<textarea name="comment" id="comment" class="form-control" rows="4" required></textarea>
 					<button class="btn btn-default" type="submit" onclick="return(confirm('Êtes-vous sûr de vouloir poster ce commentaire ?'));">Envoyer</button>
 				</form>
 			</div>

@@ -13,43 +13,41 @@
                 <span class="news-date">le <?= $data['creation_date_fr'] ?></span>
             </h3>
             
-            <p>
-                <?php
-                $textContent = $data['content'];
-                $tagsContent = "";
-                while(true)
+            <?php
+            $textContent = $data['content'];
+            $tagsContent = "";
+            while(true)
+            {
+                while($textContent[0] === " " || $textContent[0] === "\r" || $textContent[0] === "\n")
                 {
-                    while($textContent[0] === " " || $textContent[0] === "\r" || $textContent[0] === "\n")
-                    {
-                        $textContent = substr($textContent, 1);
-                    }
-                    if($textContent[0] === "<")
-                    {
-                        $tagsContent .= substr(strstr($textContent, ">", true) . ">", 0);
-                        $textContent = substr(strstr($textContent, ">"), 1);
-                    }
-                    else
-                    {
-                        break;
-                    }
+                    $textContent = substr($textContent, 1);
                 }
-                
-                if(strlen($textContent) > 500)
+                if($textContent[0] === "<")
                 {
-                    echo $tagsContent . nl2br(substr($textContent, 0, 500)). "..."; ?>
-                    <p class="article-rest"><a href="adminChapters.php?action=post&id=<?= $data['id'] ?>">Lire la suite...</a></p>
-                <?php
+                    $tagsContent .= substr(strstr($textContent, ">", true) . ">", 0);
+                    $textContent = substr(strstr($textContent, ">"), 1);
                 }
                 else
                 {
-                    echo $tagsContent . nl2br($textContent);
+                    break;
                 }
-                ?>
-                
-                <p class="link-posts modify-margin"><a href="adminChapters.php?action=modifyPost&amp;id=<?= $data['id'] ?>">Modifier</a></p>
-                <p class="link-posts"><a href="adminChapters.php?action=removePost&amp;id=<?= $data['id'] ?>" onclick="return(confirm('Êtes-vous sûr de vouloir supprimer ce billet ?'));">Supprimer</a></p>
-                <p class="link-comments"><a href="adminChapters.php?action=post&amp;id=<?= $data['id'] ?>#anchor-comments">Voir les commentaires</a></p>
-            </p>
+            }
+            
+            if(strlen($textContent) > 500)
+            {
+                echo $tagsContent . nl2br(substr($textContent, 0, 500)). "..."; ?>
+                <br /><a href="adminChapters.php?action=post&id=<?= $data['id'] ?>">Lire la suite...</a></p>
+            <?php
+            }
+            else
+            {
+                echo $tagsContent . nl2br($textContent);
+            }
+            ?>
+            
+            <p class="link-posts modify-margin"><a href="adminChapters.php?action=modifyPost&amp;id=<?= $data['id'] ?>">Modifier</a></p>
+            <p class="link-posts"><a href="adminChapters.php?action=removePost&amp;id=<?= $data['id'] ?>" onclick="return(confirm('Êtes-vous sûr de vouloir supprimer ce billet ?'));">Supprimer</a></p>
+            <p class="link-comments"><a href="adminChapters.php?action=post&amp;id=<?= $data['id'] ?>#anchor-comments">Voir les commentaires</a></p>
         </div>
     <?php
     }

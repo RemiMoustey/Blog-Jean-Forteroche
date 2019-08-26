@@ -34,7 +34,7 @@
 	<?php
 	$linkButton = isAuthenticated() ? "admin/adminChapters.php" : "chapters.php";
 	?>
-	<p class="button-link-chapters"><a href=<?= $linkButton ?>><span class="main-title">Billet simple pour l'</span><span class="title-ending">Alaska</span></button></p>
+	<p class="button-link-chapters"><a href=<?= $linkButton ?>><span class="main-title">Billet simple pour l'</span><span class="title-ending">Alaska</span></a></p>
 </div>
 
 <?php $content = ob_get_clean() ?>

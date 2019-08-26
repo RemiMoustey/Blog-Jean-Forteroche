@@ -11,7 +11,7 @@ namespace Blog\Model;
 abstract class PDOFactory
 {
 	/**
-	 * Permet la connexion à la base de données concernant toutes les données du blog
+	 * Permet la connexion à la base de données contenant toutes les données du blog
 	 *
 	 * @return PDO
 	 */
@@ -23,3 +23,5 @@ abstract class PDOFactory
 		return $db;
 	}
 }
+
+

@@ -32,7 +32,7 @@
                 }
             }
             
-            if(strlen($textContent) > 500)
+            if(mb_strlen($textContent) > 500)
             {
                 echo $tagsContent . nl2br(substr($textContent, 0, 500)). "..."; ?>
                 <br /><a href="chapters.php?action=post&id=<?= $data['id'] ?>">Lire la suite...</a></p>

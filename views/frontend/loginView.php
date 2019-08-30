@@ -22,9 +22,7 @@ if(isAuthenticated())
 	header('Location: ./admin/adminChapters.php');
 }
 
-?>
-
-<?php if ($error)
+if ($error)
 { ?>
 <div class="alert alert-danger incorrect-ids">
 	<?= $error ?>

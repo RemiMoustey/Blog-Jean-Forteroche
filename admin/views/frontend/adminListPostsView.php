@@ -58,7 +58,7 @@
     {
     ?>
         <p class="link-page">
-            <a href="?p=<?= $page - 1 ?>">Chapitres précédants</a>
+            <a href="?p=<?= $page - 1 ?>">Chapitres précédents</a>
         </p>
     <?php
     }
